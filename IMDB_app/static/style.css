@@ -1,23 +1,59 @@
-
+body{
+  background-color: #fff2e6;
+}
 .text1 {
   position: absolute;
-  top: 60%;
+  top: 64%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  /* background-color: white; */
   color: white;
-  font-size: 16px;
-  /* padding: 12px 24px; */
+  font-size: 18px;
   border: none;
   border-radius: 5px;
-
 }
 
-.btn {
+.text2 {
   position: absolute;
-  top: 60%;
-  left: 20%;
+  top: 91%;
+  left: 39.5%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
+
+.text3 {
+  position: absolute;
+  top: 91%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
+
+.text4 {
+  position: absolute;
+  top: 91%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.btn1 {
+  position: absolute;
+  top: 72%;
+  left: 44%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   background-color: white;
@@ -27,7 +63,42 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none;
 }
+
+.btn2 {
+  position: absolute;
+  top: 72%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn3 {
+  position: absolute;
+  top: 82%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+
 
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
@@ -39,8 +110,10 @@
   overflow: hidden;    
   font-family: "Lucida Handwriting", "Brush Script MT", cursive;
   font-size: 20px;
-  color:red;
+  color:black;
   font: italic;
+  text-shadow: 1px 1px orange;
+
 }
 
 /* Animation */
@@ -53,13 +126,13 @@
 
 @keyframes animated-text{
   from{width: 0;}
-  to{width: 1200px;}
+  to{width: 1150px;}
 }
 
 /* cursor animations */
 
 @keyframes animated-cursor{
-  from{border-right-color: rgba(255,255,255,.75);}
+  from{border-right-color: orange;}
   to{border-right-color: transparent;}
 }
 
