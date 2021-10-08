@@ -84,7 +84,7 @@ body{
 
 .btn3 {
   position: absolute;
-  top: 82%;
+  top: 81%;
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
@@ -109,10 +109,11 @@ body{
   white-space: nowrap;
   overflow: hidden;    
   font-family: "Lucida Handwriting", "Brush Script MT", cursive;
-  font-size: 20px;
+  font-size: 18px;
   color:black;
   font: italic;
   text-shadow: 1px 1px orange;
+  text-align: center;
 
 }
 
@@ -125,8 +126,8 @@ body{
 /* text animation */
 
 @keyframes animated-text{
-  from{width: 0;}
-  to{width: 1150px;}
+  from{width: 0px;}
+  to{width: 1145px;}
 }
 
 /* cursor animations */
