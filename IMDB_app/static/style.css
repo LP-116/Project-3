@@ -1,10 +1,20 @@
-/* #testing {
-    background-image: url("../static/images/clapper.png");
 
+.text1 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /* background-color: white; */
+  color: white;
+  font-size: 16px;
+  /* padding: 12px 24px; */
+  border: none;
+  border-radius: 5px;
 
-} */
+}
 
-.container .btn {
+.btn {
   position: absolute;
   top: 50%;
   left: 20%;
@@ -17,4 +27,41 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
+}
+
+h4 {
+  font-family: Apple Chancery, cursive;
+  font-style: italic;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+
+.text-effect2 {
+  border-right: solid 5px rgba(255,255,255,.75);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: Apple Chancery, cursive; 
+  font-size: 18px;
+  color:black;
+}
+
+/* Animation */
+.text-effect2 {
+  animation: animated-text 4s linear 1s 1 normal both,
+             animated-cursor 600ms linear infinite;
+}
+
+/* text animation */
+
+@keyframes animated-text{
+  from{width: 0;}
+  to{width: 1200px;}
+}
+
+/* cursor animations */
+
+@keyframes animated-cursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
 }
