@@ -67,9 +67,15 @@ ul {
 }
 
 .btn {
+  position: absolute;
   background-color: orange;
   color: black;
+  top: 36.5%;
+  left: 89%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
+
 
 .btn1 {
   position: absolute;
@@ -117,6 +123,18 @@ ul {
   cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
+}
+
+.date {
+
+  display: block;
+  margin-bottom: 0em;
+
+}
+
+p.top-heading {
+  margin: 0px;
+  padding: 0px;
 }
 
 

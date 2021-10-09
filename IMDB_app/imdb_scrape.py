@@ -38,8 +38,13 @@ def scrape_all():
             profit = movie.text.strip()
             movie_profit_list.append(profit)
 
+
+        movie_elem = soup.select_one('div.top-box-office')
+
+        movie_date = movie_elem.find("div", class_="ipc-title__description").get_text()
         
         movie_dict = {
+            "Date": movie_date,
             "Title": movie_title_list,
             "Profit": movie_profit_list}
 
