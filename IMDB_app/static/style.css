@@ -49,6 +49,22 @@ body{
   border-radius: 5px;
 }
 
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+.card-body {
+  padding: 0.5rem 0.5rem
+}
+
+.text5 {
+
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+
+}
 
 .btn1 {
   position: absolute;

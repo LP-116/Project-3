@@ -53,7 +53,22 @@
                 <p class="text3"> Leanne Porter</p> 
                 <p class="text4"> &nbsp &copy 2021 </p> 
                 <img src="../static/images/clapper.png" width="500" height="450"> </div>
-              <div class="col-lg-2"></div>
+              <div class="col-lg-3">
+                <p class="scrape-button"><a class="btn btn-sm" href="../scrape" role="button"><b>Get Latest Movie Data</b></a></p>
+                <div class="card">
+                  <div class="card-body">
+                    <ul style="list-style: none;">
+                    <li class="text5"><b>1. {{ imdb.Title[0] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[0] }}</li> <hr>
+                    <li class="text5"><b>2. {{ imdb.Title[1] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[1] }}</li> <hr>
+                    <li class="text5"><b>3. {{ imdb.Title[2] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[2] }}</li> <hr>
+                    <li class="text5"><b>4. {{ imdb.Title[3] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[3] }}</li> <hr>
+                    <li class="text5"><b>5. {{ imdb.Title[4] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[4] }}</li> <hr>
+                    <li class="text5"><b>6. {{ imdb.Title[5] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[5] }}</li>
+                  </ul>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
