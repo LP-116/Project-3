@@ -142,7 +142,6 @@ ul {
 .date {
   display: block;
   margin-bottom: 0em;
-
 }
 
 .detail {
@@ -156,6 +155,7 @@ p.top-heading {
   padding: 0px;
   text-shadow: 1px 1px orange;
 }
+
 
 .top-heading2 {
  color: black !important;
