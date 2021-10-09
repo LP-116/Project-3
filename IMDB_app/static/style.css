@@ -1,6 +1,7 @@
 body{
   background-color: #fff2e6;
 }
+
 .text1 {
   position: absolute;
   top: 64%;
@@ -161,25 +162,30 @@ p.top-heading {
   white-space: nowrap;
   overflow: hidden;    
   font-family: "Lucida Handwriting", "Brush Script MT", cursive;
-  font-size: 18px;
+  font-size: 22px;
   color:black;
   font: italic;
   text-shadow: 1px 1px orange;
-  text-align: center;
+  text-align: center !important;
 
+}
+
+p.text-effect2 {
+  text-align: center;
 }
 
 /* Animation */
 .text-effect2 {
   animation: animated-text 4s linear 1s 1 normal both,
              animated-cursor 600ms linear infinite;
+  text-align: center !important;
 }
 
 /* text animation */
 
 @keyframes animated-text{
   from{width: 0px;}
-  to{width: 1145px;}
+  to{width: 1220px;}
 }
 
 /* cursor animations */
