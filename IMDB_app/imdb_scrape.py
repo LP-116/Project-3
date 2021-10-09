@@ -9,4 +9,5 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 
 
-def imdb_hits(browser):
+# def imdb_hits(browser):
+
