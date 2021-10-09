@@ -66,6 +66,11 @@ ul {
 
 }
 
+.btn {
+  background-color: orange;
+  color: black;
+}
+
 .btn1 {
   position: absolute;
   top: 72%;
