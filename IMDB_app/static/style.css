@@ -74,6 +74,8 @@ ul {
   left: 89%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  border: 1px solid black
+
 }
 
 
@@ -135,9 +137,20 @@ ul {
 p.top-heading {
   margin: 0px;
   padding: 0px;
+  text-shadow: 1px 1px orange;
+}
+
+.top-heading2 {
+ color: black !important;
+ text-shadow: none
 }
 
 
+.card {
+  /* border-color: orange; */
+  border-radius: 10px;
+  border: 2px solid orange
+}
 
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
