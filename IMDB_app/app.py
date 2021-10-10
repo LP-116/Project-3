@@ -41,6 +41,7 @@ def rating():
 
     rating_data = "graph1-highest_rated.csv"
     rating_df = pd.read_csv(rating_data)
+    rating_df = rating_df.sort_values("avg_vote", ascending=False)
     
     rating_data = rating_df.to_dict('records')
 
