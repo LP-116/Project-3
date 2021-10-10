@@ -82,9 +82,29 @@ def budget():
     
     budget_data = budget_df.to_dict('records')
 
-
     return jsonify(budget_data)
 
+
+@app.route("/unfiltered_votes")
+def unfiltered():
+
+    unfiltered_votes_csv = "votes_unfiltered(profit vs rating).csv"
+    unfiltered_votes_df = pd.read_csv(unfiltered_votes_csv)
+    
+    unfiltered_data = unfiltered_votes_df.to_dict('records')
+
+    return jsonify(unfiltered_data)
+
+
+@app.route("/filtered_votes")
+def filtered():
+
+    filtered_votes_csv = "votes_filtered(votes vs rating).csv"
+    filtered_votes_df = pd.read_csv(filtered_votes_csv)
+    
+    filtered_data = filtered_votes_df.to_dict('records')
+
+    return jsonify(filtered_data)
 
 
 
