@@ -216,7 +216,7 @@ p.top-heading {
 
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
-
+/*Reference: https://codepen.io/aakhya/pen/bQeJaX */
 
 .text-effect2 {
   border-right: solid 5px rgba(255,255,255,.75);
@@ -291,6 +291,8 @@ p.text-effect2 {
 } */
 
 /* The animation starts here */
+/* Reference: https://codepen.io/alphardex/pen/vYEYGzp */
+
 .animated-box {
   position: relative;
 }

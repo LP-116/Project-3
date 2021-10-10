@@ -74,6 +74,19 @@ def production():
     return jsonify(production_data)
 
 
+@app.route("/budget")
+def budget():
+
+    budget_csv = "graph4-budget vs profit.csv"
+    budget_df = pd.read_csv(budget_csv)
+    
+    budget_data = budget_df.to_dict('records')
+
+
+    return jsonify(budget_data)
+
+
+
 
 
 
