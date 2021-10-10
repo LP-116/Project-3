@@ -36,6 +36,19 @@ def scrape():
     return redirect("/")
 
 
+@app.route("/rating")
+def rating():
+
+    rating_data = "graph1-highest_rated.csv"
+    rating_df = pd.read_csv(rating_data)
+    
+    rating_data = rating_df.to_dict('records')
+
+
+    return jsonify(rating_data)
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
 
