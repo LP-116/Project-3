@@ -25,7 +25,6 @@ def welcome():
     return render_template("index.html", imdb=imdb_data)
 
 
-
 @app.route("/scrape")
 def scrape():
 
@@ -106,6 +105,17 @@ def filtered():
 
     return jsonify(filtered_data)
 
+
+@app.route("/map")
+def map():
+
+    country_csv = "movies per country.csv"
+    country_df = pd.read_csv(country_csv)
+    country_df = country_df.rename(columns={"0":"count"})
+    
+    country_data = country_df.to_dict('records')
+
+    return jsonify(country_data)
 
 
 
