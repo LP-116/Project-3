@@ -61,6 +61,20 @@ def profit():
     return jsonify(profit_data)
 
 
+@app.route("/production")
+def production():
+
+    production_csv = "production.csv"
+    production_df = pd.read_csv(production_csv)
+    production_df = production_df.rename(columns={"0":"count"})
+    
+    production_data = production_df.to_dict('records')
+
+
+    return jsonify(production_data)
+
+
+
 
 
 
