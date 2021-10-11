@@ -53,6 +53,19 @@ def rating():
     return jsonify(rating_data)
 
 
+@app.route("/votes")
+def votes():
+
+    votes_csv = "graph1-highest_rated.csv"
+    votes_df = pd.read_csv(votes_csv)
+    votes_df = votes_df.sort_values("votes", ascending=False)
+    
+    votes_data = votes_df.to_dict('records')
+
+
+    return jsonify(votes_data)
+
+
 @app.route("/profit")
 def profit():
 

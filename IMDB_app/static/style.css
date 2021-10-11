@@ -214,6 +214,25 @@ p.top-heading {
 
 }
 
+#text-effect2 {
+
+  font: 50px "Lato", sans-serif;
+  color:black;
+  font: italic;
+  text-shadow: 2px 2px 3px orange;
+  text-align: center;
+
+}
+
+#selDataset {
+  width:150px;
+}
+
+#chart1 {
+  width: 600px;
+  height: 400px;
+
+}
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 /*Reference: https://codepen.io/aakhya/pen/bQeJaX */
@@ -229,6 +248,18 @@ p.top-heading {
   text-shadow: 1px 1px orange;
   text-align: center !important;
 
+}
+
+.navbar-custom {
+  background-color: lightslategrey;
+}
+
+.nav-link {
+  color: white  
+}
+
+.navbar-brand {
+  color: white
 }
 
 p.text-effect2 {
@@ -255,7 +286,6 @@ p.text-effect2 {
   from{border-right-color: orange;}
   to{border-right-color: transparent;}
 }
-
 
 
 /* span {

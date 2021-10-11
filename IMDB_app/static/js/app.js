@@ -1,30 +1,19 @@
-// Functions used to build the graph and stats data.
-
-// This function is run on webpage load. 
-//  It builds the suburb dropdown menu and runs the buildgraph and updatestats functions. 
-
-function startSpinner1() {
-    // Codde to make the spinner start
-    $("#filter-btn1").prop("disabled", true);
-    $("#filter-btn1").html(
-        `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>&nbsp Loading...`
-    );
-}
-
 
 function init() {
 
-    d3.json("/suburbs").then((item) => {
+    d3.json("/map").then((item) => {
 
-        suburb_list = []
+        // console.log(item)
+
+        country_list = []
 
         for (var i in item) {
-                suburb_list.push(item[i].suburb)
+                country_list.push(item[i].country)
                 }
 
         var dropdownMenu = d3.select("#selDataset");
 
-        var dropdownNames = suburb_list;
+        var dropdownNames = country_list.sort();
         
         dropdownNames.forEach((item) => {
         dropdownMenu
@@ -34,7 +23,6 @@ function init() {
         });
         
         buildGraph();
-        updatestats();
 
     });
    
@@ -45,10 +33,10 @@ function init() {
 function buildGraph() {
     
     // Reading the incidents route data.
-    d3.json("/incidents").then((data) => {
+    d3.json("/votes").then((data) => {
 
         // Clearing the existing chart space to avoid overlap issues.
-        document.querySelector("#chartReport").innerHTML = '<canvas id="myChart"></canvas>';
+        document.querySelector("#chart1").innerHTML = '<canvas id="myChart"></canvas>';
 
         // Getting the suburb value in the dropdown box.
         var idSelect = d3.select("#selDataset").property("value")
@@ -56,41 +44,39 @@ function buildGraph() {
         console.log(idSelect);
 
         // Creating blank lists to hold results.
-        suburb_list = []
-        incident_list = []
-        offence_sub_div_list = []
+        movie_list = []
+        votes_list = []
 
 
         // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
         for (var i in data) {
 
-            if(data[i].suburb === idSelect){
-                suburb_list.push(data[i].suburb)
-                incident_list.push(data[i].incidents)
-                offence_sub_div_list.push(data[i].offence_sub_div)
+            if(data[i].country === idSelect){
+                votes_list.push(data[i].votes)
+                movie_list.push(data[i].original_title)
             }
         }
 
         // Filter the list's to return top 5 results.
-        var top5_incidents = incident_list.slice(0,5);
-        var top5_sub_div = offence_sub_div_list.slice(0,5);
+        var top10_movies= movie_list.slice(0,10);
+        var top10_votes = votes_list.slice(0,10);
 
-        console.log(top5_incidents);
-        console.log(top5_sub_div);
+        console.log(top10_movies);
+        console.log(top10_votes);
 
         // Create the graph using Chart.js
-        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
+        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF", "#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
         var myChart = new Chart("myChart", {
-        type: "horizontalBar",
+        type: "bar",
 
         data: {
-          labels: top5_sub_div,
+          labels: top10_movies,
           datasets: [{
             backgroundColor: barColors,
-            data: top5_incidents,
+            data: top10_votes,
             grouped: true, 
             maxBarThickness: 50, 
-            label: "Total Number of Offences",            
+            label: "Rating",            
           }]
         },
 
@@ -103,7 +89,7 @@ function buildGraph() {
 
             title: {
                     display: true,
-                    text: "2021: Top 5 Offences Comitted",
+                    text: "Movies with most no. of Ratings",
                     fontSize: 16
                 },
             
@@ -121,79 +107,79 @@ function buildGraph() {
     }})})
 
 
-    // Reading in the line_data route.
-    d3.json("/line_data").then((data) => {
+//     // Reading in the line_data route.
+//     d3.json("/line_data").then((data) => {
 
 
-        // Clearing the line chart area.
-        document.querySelector("#chartReport2").innerHTML = '<canvas id="myChart2"></canvas>';
+//         // Clearing the line chart area.
+//         document.querySelector("#chartReport2").innerHTML = '<canvas id="myChart2"></canvas>';
 
-        // Getting the suburb value from the dropdown box.
-        var idSelect = d3.select("#selDataset").property("value")
+//         // Getting the suburb value from the dropdown box.
+//         var idSelect = d3.select("#selDataset").property("value")
 
-        console.log(idSelect);
+//         console.log(idSelect);
 
-        // Creating blank lists.
-        incident_list = []
-        year_list = []
+//         // Creating blank lists.
+//         incident_list = []
+//         year_list = []
 
-        // Everytime there is a suburb match, push the data into the corresponding list.
-        for (var i in data) {
+//         // Everytime there is a suburb match, push the data into the corresponding list.
+//         for (var i in data) {
 
-            if(data[i].suburb === idSelect){
-                year_list.push(data[i].year)
-                incident_list.push(data[i].incidents)
-            }
-        }
-
-
-        console.log(incident_list);
-        console.log(year_list)
-
-        // Creating the line chart using chart.js
-        const barColors = ["#87CEEB"]
-        new Chart("myChart2", {
-        type: "line",
-
-        data: {
-          labels: year_list.reverse(),
-          datasets: [{
-            data: incident_list.reverse(),
-            grouped: true, 
-            maxBarThickness: 50, 
-            label: "Total Number of Offences",   
-            fill: false,
-            borderDash: [5, 5],    
-            borderColor: "#1f50cc",
-            pointBordercolor: "navy",
-            pointBackgroundColor: 'red',
-            pointStyle: 'rectRot'
-          }]
-        },
+//             if(data[i].suburb === idSelect){
+//                 year_list.push(data[i].year)
+//                 incident_list.push(data[i].incidents)
+//             }
+//         }
 
 
-        options: {
+//         console.log(incident_list);
+//         console.log(year_list)
 
-            responsive: true,
-            maintainAspectRatio: false,
+//         // Creating the line chart using chart.js
+//         const barColors = ["#87CEEB"]
+//         new Chart("myChart2", {
+//         type: "line",
 
-            title: {
-            display: true,
-            text: "Total No. of Offences Comitted from 2012 - 2021",
-            fontSize: 16},
+//         data: {
+//           labels: year_list.reverse(),
+//           datasets: [{
+//             data: incident_list.reverse(),
+//             grouped: true, 
+//             maxBarThickness: 50, 
+//             label: "Total Number of Offences",   
+//             fill: false,
+//             borderDash: [5, 5],    
+//             borderColor: "#1f50cc",
+//             pointBordercolor: "navy",
+//             pointBackgroundColor: 'red',
+//             pointStyle: 'rectRot'
+//           }]
+//         },
+
+
+//         options: {
+
+//             responsive: true,
+//             maintainAspectRatio: false,
+
+//             title: {
+//             display: true,
+//             text: "Total No. of Offences Comitted from 2012 - 2021",
+//             fontSize: 16},
             
-            scales: {
-                yAxes: [{
-                ticks: {
-                beginAtZero: true,
-                grouped: true}
-                }]
-            },
-    }})
+//             scales: {
+//                 yAxes: [{
+//                 ticks: {
+//                 beginAtZero: true,
+//                 grouped: true}
+//                 }]
+//             },
+//     }})
 
 
 
-});
+// });
 
 }
 
@@ -258,10 +244,37 @@ function updatestats() {
 // Each time the drop down selection is changed, run the functions.
 function optionChanged()
 { 
-buildGraph();
-updatestats()
+    buildGraph()
+
  }
 
 
 // Run the init function on webpage load.
 init();
+
+
+
+
+// d3.json("/rating").then((data) => {
+
+//     // Clearing the existing chart space to avoid overlap issues.
+//     document.querySelector("#chart1").innerHTML = '<canvas id="myChart"></canvas>';
+
+//     // Getting the suburb value in the dropdown box.
+//     var idSelect = d3.select("#selDataset").property("value")
+
+//     console.log(idSelect);
+
+//     // Creating blank lists to hold results.
+//     movie_list = []
+//     rating_list = []
+
+
+//     // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
+//     for (var i in data) {
+
+//         if(data[i].country === idSelect){
+//             rating_list.push(data[i].avg_vote)
+//             movie_list.push(data[i].original_title)
+//         }
+//     }
