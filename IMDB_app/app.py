@@ -24,6 +24,11 @@ def welcome():
     
     return render_template("index.html", imdb=imdb_data)
 
+@app.route("/analysis.html")
+def analysis():
+
+    
+    return render_template("analysis.html")
 
 @app.route("/scrape")
 def scrape():
