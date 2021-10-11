@@ -261,12 +261,24 @@ p.top-heading {
 }
 
 .nav-link {
-  color: white  
+  color: white;
 }
+
 
 .navbar-brand {
   color: white
 }
+
+.navbar-brand:hover {
+  color:orange
+}
+
+
+.navbar-nav .nav-item.active .nav-link, 
+.navbar-nav .nav-item:hover .nav-link {
+    color: orange;
+}
+
 
 p.text-effect2 {
   text-align: center;
