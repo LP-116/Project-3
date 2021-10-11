@@ -76,10 +76,6 @@ function buildGraph() {
         // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
         for (var i in data) {
 
-            // if (data[i].country === idSelect){
-            //     votes_list.push(data[i].votes)
-            //     movie_list.push(data[i].original_title)
-            // }
 
             if(data[i].country === idSelect && data[i].year === parseInt(idSelect2)){
                 votes_list.push(data[i].votes)
@@ -94,8 +90,6 @@ function buildGraph() {
             }
 
         }
-
-        // console.log(year_list)
 
         // Filter the list's to return top 5 results.
         var top10_movies= movie_list.slice(0,10);
@@ -146,80 +140,89 @@ function buildGraph() {
             
     }})})
 
+    // Reading the incidents route data.
+    d3.json("/profit").then((data) => {
 
-//     // Reading in the line_data route.
-//     d3.json("/line_data").then((data) => {
+        // Clearing the existing chart space to avoid overlap issues.
+        document.querySelector("#chart2").innerHTML = '<canvas id="myChart1"></canvas>';
 
+        // Getting the suburb value in the dropdown box.
+        var idSelect = d3.select("#selDataset").property("value");
+        var idSelect2 = d3.select("#selDataset2").property("value");
 
-//         // Clearing the line chart area.
-//         document.querySelector("#chartReport2").innerHTML = '<canvas id="myChart2"></canvas>';
+        console.log(idSelect);
+        console.log(idSelect2);
 
-//         // Getting the suburb value from the dropdown box.
-//         var idSelect = d3.select("#selDataset").property("value")
+        // Creating blank lists to hold results.
+        movie_list = []
+        profit_list = []
 
-//         console.log(idSelect);
-
-//         // Creating blank lists.
-//         incident_list = []
-//         year_list = []
-
-//         // Everytime there is a suburb match, push the data into the corresponding list.
-//         for (var i in data) {
-
-//             if(data[i].suburb === idSelect){
-//                 year_list.push(data[i].year)
-//                 incident_list.push(data[i].incidents)
-//             }
-//         }
+        // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
+        for (var i in data) {
 
 
-//         console.log(incident_list);
-//         console.log(year_list)
+            if(data[i].country === idSelect && data[i].year === parseInt(idSelect2)){
+                profit_list.push((data[i].worlwide_gross_income)/10000)
+                movie_list.push(data[i].original_title)
+                
+            }
 
-//         // Creating the line chart using chart.js
-//         const barColors = ["#87CEEB"]
-//         new Chart("myChart2", {
-//         type: "line",
+            else if (data[i].country === idSelect && idSelect2 === "ALL"){
+                profit_list.push((data[i].worlwide_gross_income)/10000)
+                movie_list.push(data[i].original_title)
+            }
 
-//         data: {
-//           labels: year_list.reverse(),
-//           datasets: [{
-//             data: incident_list.reverse(),
-//             grouped: true, 
-//             maxBarThickness: 50, 
-//             label: "Total Number of Offences",   
-//             fill: false,
-//             borderDash: [5, 5],    
-//             borderColor: "#1f50cc",
-//             pointBordercolor: "navy",
-//             pointBackgroundColor: 'red',
-//             pointStyle: 'rectRot'
-//           }]
-//         },
+        }
+
+        // Filter the list's to return top 5 results.
+        var top10_movies2 = movie_list.slice(0,10);
+        var top10_profit = profit_list.slice(0,10);
+
+        console.log(top10_movies2);
+        console.log(top10_profit);
+
+        
+        // Create the graph using Chart.js
+        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF", "#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
+        var myChart1 = new Chart("myChart1", {
+        type: "bar",
+
+        data: {
+          labels: top10_movies2,
+          datasets: [{
+            backgroundColor: barColors,
+            data: top10_profit,
+            grouped: true, 
+            maxBarThickness: 50, 
+            label: "Profit ($'000)",            
+          }]
+        },
 
 
-//         options: {
+        options: {
 
-//             responsive: true,
-//             maintainAspectRatio: false,
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
 
-//             title: {
-//             display: true,
-//             text: "Total No. of Offences Comitted from 2012 - 2021",
-//             fontSize: 16},
+            title: {
+                    display: true,
+                    text: "Most Profitable Movies",
+                    fontSize: 16
+                },
             
-//             scales: {
-//                 yAxes: [{
-//                 ticks: {
-//                 beginAtZero: true,
-//                 grouped: true}
-//                 }]
-//             },
-//     }})
+            scales: {
+                    yAxes: [{
+                    ticks: {
+                    beginAtZero: true,
+                    grouped: true
+                }
+                }]
 
+            },
 
-
-// });
+            
+    }})})
 
 }
 
