@@ -24,11 +24,20 @@ def welcome():
     
     return render_template("index.html", imdb=imdb_data)
 
+
+
 @app.route("/analysis.html")
 def analysis():
 
     
     return render_template("analysis.html")
+
+
+@app.route("/machine learning.html")
+def machine_learining():
+
+    
+    return render_template("machine learning.html")
 
 @app.route("/scrape")
 def scrape():

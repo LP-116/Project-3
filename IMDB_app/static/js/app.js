@@ -228,59 +228,38 @@ function buildGraph() {
 
 // This function is used to update the stats_data.
 function updatestats() {
+    
 
-    // Reading in the stats_data route.
-    d3.json("/stats_data").then((data) => {
+    d3.json("/rating").then((data) => {
 
-        // Getting the suburb from the drop down box.
-        var idSelect = d3.select("#selDataset").property("value")
+        // Getting the suburb value in the dropdown box.
+        var idSelect = d3.select("#selDataset").property("value");
+        var idSelect2 = d3.select("#selDataset2").property("value");
 
-        console.log(idSelect);
+        // Creating blank lists to hold results.
+        movie_list = []
+        rating_list = []
 
-        // Creating blank lists.
-        incident_list = []
-        incident_list2 = []
-
-        // Everytime the suburb and year match 2021, push the data into the corresponding list.
+        // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
         for (var i in data) {
 
-            if(data[i].suburb === idSelect && data[i].year === parseInt("2021")){
-                incident_list.push(data[i].incidents)
+
+            if(data[i].country === idSelect && data[i].year === parseInt(idSelect2)){
+                rating_list.push(data[i].avg_vote)
+                movie_list.push(data[i].original_title)
+                
             }
+
+            else if (data[i].country === idSelect && idSelect2 === "ALL"){
+                rating_list.push(data[i].avg_vote)
+                movie_list.push(data[i].original_title)
+            }
+
         }
 
-        // Everytime the suburb and year match 2020, push the data into the corresponding list.
-        for (var x in data) {
-
-            if(data[x].suburb === idSelect && data[x].year === parseInt("2020")){
-                incident_list2.push(data[x].incidents)
-            }
-        }
-
-        // Calculate the difference and percentage change.
-        var difference = (incident_list[0] - incident_list2[0])
-        var difference2 = ((incident_list2[0] - incident_list[0]) / incident_list[0] * 100).toFixed(2);
-
-        // Input the results into the card as text.
-        d3.select("#card2021").text(incident_list[0]);
-        d3.select("#card2020").text(incident_list2[0]);
-        d3.select("#difference").text(difference);
-
-        // Used for formatting the % difference.
-        if (difference < 0) {
-
-            d3.select("#difference2").text((difference2) + "% decrease");
-            }
-
-            else {
-                var newDifference = Math.abs(difference2)
-                d3.select("#difference2").text((newDifference) + "% increase");
-            }
 
 
-    })
-
-
+})
 }
 
 
@@ -295,29 +274,3 @@ function optionChanged()
 // Run the init function on webpage load.
 init();
 
-
-
-
-// d3.json("/rating").then((data) => {
-
-//     // Clearing the existing chart space to avoid overlap issues.
-//     document.querySelector("#chart1").innerHTML = '<canvas id="myChart"></canvas>';
-
-//     // Getting the suburb value in the dropdown box.
-//     var idSelect = d3.select("#selDataset").property("value")
-
-//     console.log(idSelect);
-
-//     // Creating blank lists to hold results.
-//     movie_list = []
-//     rating_list = []
-
-
-//     // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
-//     for (var i in data) {
-
-//         if(data[i].country === idSelect){
-//             rating_list.push(data[i].avg_vote)
-//             movie_list.push(data[i].original_title)
-//         }
-//     }
