@@ -1,5 +1,5 @@
 body{
-  background-color: #fff2e6;
+  background-color: #F0F0F0;
 }
 
 .text1 {
@@ -57,7 +57,7 @@ ul {
 
 .card-body {
   padding: 0.5rem 0.5rem;
-  background-color: #F0F0F0;
+  background-color: white;
 }
 
 .text5 {

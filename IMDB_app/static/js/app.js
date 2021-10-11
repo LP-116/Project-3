@@ -46,6 +46,7 @@ function init() {
         });
         
         buildGraph();
+        updatestats()
 
     });
    
@@ -255,7 +256,28 @@ function updatestats() {
                 movie_list.push(data[i].original_title)
             }
 
-        }
+        };
+
+        var top5_movies = movie_list.slice(0,5);
+        var top5_ratings = rating_list.slice(0,5);
+
+        var combined = top5_movies.map(function(e, i) {
+            return [e, top5_ratings[i]];
+          });
+
+        console.log(combined)
+        
+        var infoBox = d3.select("#card1");
+
+        Object.entries(combined).forEach(([key, value]) => {
+            infoBox
+                .append("h7")
+                .text(key + ": " + value);
+    
+            });
+
+        // d3.select("#card1").text(top5_movies[0], top5_movies[1]);
+        // d3.select("#card1").text(top5_movies);
 
 
 
@@ -267,6 +289,7 @@ function updatestats() {
 function optionChanged()
 { 
     buildGraph()
+    updatestats()
 
  }
 
