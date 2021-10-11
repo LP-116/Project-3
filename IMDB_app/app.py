@@ -136,6 +136,15 @@ def map():
     return jsonify(country_data)
 
 
+@app.route("/year")
+def year():
+
+    year_csv = "year list.csv"
+    year_df = pd.read_csv(year_csv)
+    
+    year_data = year_df.to_dict('records')
+
+    return jsonify(year_data)
 
 
 

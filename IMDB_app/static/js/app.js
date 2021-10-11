@@ -21,6 +21,29 @@ function init() {
             .text(item)
             .property("value", item);
         });
+
+    });
+
+    d3.json("/year").then((item) => {
+
+        // console.log(item)
+
+        year_list = []
+
+        for (var i in item) {
+                year_list.push(item[i].year)
+                }
+
+        var dropdownMenu = d3.select("#selDataset2");
+
+        var dropdownNames = year_list;
+        
+        dropdownNames.forEach((item) => {
+        dropdownMenu
+            .append("option")
+            .text(item)
+            .property("value", item);
+        });
         
         buildGraph();
 
@@ -39,23 +62,40 @@ function buildGraph() {
         document.querySelector("#chart1").innerHTML = '<canvas id="myChart"></canvas>';
 
         // Getting the suburb value in the dropdown box.
-        var idSelect = d3.select("#selDataset").property("value")
+        var idSelect = d3.select("#selDataset").property("value");
+        var idSelect2 = d3.select("#selDataset2").property("value");
 
         console.log(idSelect);
+        console.log(idSelect2);
 
         // Creating blank lists to hold results.
         movie_list = []
         votes_list = []
-
+        year_list =[]
 
         // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
         for (var i in data) {
 
-            if(data[i].country === idSelect){
+            // if (data[i].country === idSelect){
+            //     votes_list.push(data[i].votes)
+            //     movie_list.push(data[i].original_title)
+            // }
+
+            if(data[i].country === idSelect && data[i].year === parseInt(idSelect2)){
+                votes_list.push(data[i].votes)
+                movie_list.push(data[i].original_title)
+                year_list.push(data[i].year)
+                
+            }
+
+            else if (data[i].country === idSelect && idSelect2 === "ALL"){
                 votes_list.push(data[i].votes)
                 movie_list.push(data[i].original_title)
             }
+
         }
+
+        // console.log(year_list)
 
         // Filter the list's to return top 5 results.
         var top10_movies= movie_list.slice(0,10);
@@ -76,7 +116,7 @@ function buildGraph() {
             data: top10_votes,
             grouped: true, 
             maxBarThickness: 50, 
-            label: "Rating",            
+            label: "No. of votes",            
           }]
         },
 
