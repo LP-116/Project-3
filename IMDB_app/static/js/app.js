@@ -102,7 +102,7 @@ function buildGraph() {
         // Create the graph using Chart.js
         const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF", "#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
         var myChart = new Chart("myChart", {
-        type: "bar",
+        type: "horizontalBar",
 
         data: {
           labels: top10_movies,
@@ -186,7 +186,7 @@ function buildGraph() {
         // Create the graph using Chart.js
         const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF", "#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
         var myChart1 = new Chart("myChart1", {
-        type: "bar",
+        type: "horizontalBar",
 
         data: {
           labels: top10_movies2,
@@ -267,14 +267,47 @@ function updatestats() {
 
         console.log(combined)
         
+        d3.select("#cardyear").text(idSelect2)
+
         var infoBox = d3.select("#card1");
 
-        Object.entries(combined).forEach(([key, value]) => {
+        infoBox.html("");
+
+        number = 1
+
+        combined.forEach(([key, value]) => {
             infoBox
-                .append("h7")
-                .text(key + ": " + value);
+                .append("h6")
+                .text(number + ". " + key + ": " + value)
+                .append("br");
+
+                number+=1
     
             });
+
+
+        var top10_movies = movie_list.slice(6,11);
+        var top10_ratings = rating_list.slice(6,11);
+    
+        var combined2 = top10_movies.map(function(e, i) {
+            return [e, top10_ratings[i]];
+            });
+
+        var infoBox2 = d3.select("#card2");
+
+        infoBox2.html("");
+        
+        number = 6
+
+        combined2.forEach(([key, value]) => {
+                infoBox2
+                    .append("h6")
+                    .text(number + ". " + key + ": " + value)
+                    .append("br")
+
+                    number+=1
+                });   
+        
 
         // d3.select("#card1").text(top5_movies[0], top5_movies[1]);
         // d3.select("#card1").text(top5_movies);
