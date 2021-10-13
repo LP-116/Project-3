@@ -100,37 +100,37 @@ def production():
     return jsonify(production_data)
 
 
-@app.route("/budget")
-def budget():
+# @app.route("/budget")
+# def budget():
 
-    budget_csv = "graph4-budget vs profit.csv"
-    budget_df = pd.read_csv(budget_csv)
+#     budget_csv = "graph4-budget vs profit.csv"
+#     budget_df = pd.read_csv(budget_csv)
     
-    budget_data = budget_df.to_dict('records')
+#     budget_data = budget_df.to_dict('records')
 
-    return jsonify(budget_data)
+#     return jsonify(budget_data)
 
 
-@app.route("/unfiltered_votes")
-def unfiltered():
+# @app.route("/unfiltered_votes")
+# def unfiltered():
 
-    unfiltered_votes_csv = "votes_unfiltered(profit vs rating).csv"
-    unfiltered_votes_df = pd.read_csv(unfiltered_votes_csv)
+#     unfiltered_votes_csv = "votes_unfiltered(profit vs rating).csv"
+#     unfiltered_votes_df = pd.read_csv(unfiltered_votes_csv)
     
-    unfiltered_data = unfiltered_votes_df.to_dict('records')
+#     unfiltered_data = unfiltered_votes_df.to_dict('records')
 
-    return jsonify(unfiltered_data)
+#     return jsonify(unfiltered_data)
 
 
-@app.route("/filtered_votes")
-def filtered():
+# @app.route("/filtered_votes")
+# def filtered():
 
-    filtered_votes_csv = "votes_filtered(votes vs rating).csv"
-    filtered_votes_df = pd.read_csv(filtered_votes_csv)
+#     filtered_votes_csv = "votes_filtered(votes vs rating).csv"
+#     filtered_votes_df = pd.read_csv(filtered_votes_csv)
     
-    filtered_data = filtered_votes_df.to_dict('records')
+#     filtered_data = filtered_votes_df.to_dict('records')
 
-    return jsonify(filtered_data)
+#     return jsonify(filtered_data)
 
 
 @app.route("/map")
@@ -154,6 +154,17 @@ def year():
     year_data = year_df.to_dict('records')
 
     return jsonify(year_data)
+
+
+@app.route("/genre")
+def genre():
+
+    genre_csv = "genre.csv"
+    genre_df = pd.read_csv(genre_csv)
+    
+    genre_data = genre_df.to_dict('records')
+
+    return jsonify(genre_data)    
 
 
 

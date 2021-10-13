@@ -46,7 +46,8 @@ function init() {
         });
         
         buildGraph();
-        updatestats()
+        updatestats();
+        buildGraph2()
 
     });
    
@@ -307,15 +308,89 @@ function updatestats() {
 
                     number+=1
                 });   
-        
-
-        // d3.select("#card1").text(top5_movies[0], top5_movies[1]);
-        // d3.select("#card1").text(top5_movies);
-
 
 
 })
 }
+
+function buildGraph2() {
+    
+    // Reading the incidents route data.
+    d3.json("/genre").then((data) => {
+
+        // Clearing the existing chart space to avoid overlap issues.
+        document.querySelector("#chart3").innerHTML = '<canvas id="myChart3"></canvas>';
+
+        // Getting the suburb value in the dropdown box.
+        var idSelect3 = d3.select("#selDataset3").property("value");
+
+        console.log(idSelect3);
+
+        // Creating blank lists to hold results.
+
+        genre_list = []
+        income_list = []
+
+        // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
+        for (var i in data) {
+
+
+            if(data[i].year === parseInt(idSelect3)){
+                genre_list.push(data[i].genre)
+                income_list.push(data[i].worlwide_gross_income)
+                
+            }
+
+            else if (idSelect3 === "ALL"){
+                genre_list.push(data[i].genre)
+                income_list.push(data[i].worlwide_gross_income)
+            }
+
+        }
+
+        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF", "#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
+        var myChart1 = new Chart("myChart3", {
+        type: "bar",
+
+        data: {
+          labels: genre_list,
+          datasets: [{
+            backgroundColor: barColors,
+            data: income_list,
+            grouped: true, 
+            maxBarThickness: 50, 
+            label: "Profit ($'000)",            
+          }]
+        },
+
+
+        options: {
+
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+
+            title: {
+                    display: true,
+                    text: "Most Profitable Movies",
+                    fontSize: 16
+                },
+            
+            scales: {
+                    yAxes: [{
+                    ticks: {
+                    beginAtZero: true,
+                    grouped: true
+                }
+                }]
+            },
+
+        }
+})
+
+
+
+})};
 
 
 // Each time the drop down selection is changed, run the functions.
@@ -323,6 +398,7 @@ function optionChanged()
 { 
     buildGraph()
     updatestats()
+    buildGraph2()
 
  }
 
