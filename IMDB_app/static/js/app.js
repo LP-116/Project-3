@@ -450,6 +450,8 @@ function buildGraph2() {
             var top5_genre = genre_list.slice(0,5);
             var top5_count = count_list.slice(0,5);
 
+
+
             var myChart4 = new Chart("myChart4", {
                         type: 'pie',
                         data:  {
@@ -458,13 +460,15 @@ function buildGraph2() {
                           label: 'Most movies made in year (TOP 5 Genres)',
                           data: top5_count,
                           backgroundColor: [
-                            'rgb(255, 99, 132)',
-                            'rgb(54, 162, 235)',
-                            'rgb(255, 205, 86)',
-                            'rgb(0, 0, 128)',
-                            'rgb(0, 120, 0)'
+                            'rgb(0, 204, 255)',
+                            'rgb(255, 128, 0)',
+                            'rgb(0, 64, 255)',
+                            'rgb(128, 0, 255)',
+                            'rgb(0, 153, 0)'
                           ],
-                          hoverOffset: 4,
+                            borderColor: 'rgb(0, 0, 128)',
+                            borderWidth: 1,
+                            hoverOffset: 4,
                          
                         }],
                     },
