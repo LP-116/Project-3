@@ -52,21 +52,43 @@
           <!-- Start of dashboard section. This is the right hand side of the grid.-->
           <br>
           <div class="container">
-            <div class="row">
-                  <div class="col-lg-5" id="user-selection">
+            <h3 id="text-effect5">Introductory Analysis</h3>
+            <hr>
+            <div class="row">            
+              <div class="col-sm-1"></div>
+                  <div class="col-lg-4" id="user-selection">
+                    <div class="card card1">
+                      <div class="card-body text-center">
+                        <h5 id="text-effect4">To explore the dataset, <p id="text-effect4">please select from the below:</p></h5>
+                        <hr>
                         <h6><b>Select Country:</b>
-                        <select id="selDataset" onchange="optionChanged(this.value)">
-                        <option >USA</option></select>
-                        <b>&nbsp &nbsp &nbsp Select Year:</b>
-                        <select id="selDataset2" onchange="optionChanged(this.value)">
-                          <option >ALL</option></select></h6>
-                          <hr>
-                          <h5><b>Top 10: Highest Rated Movies: &nbsp<span id="cardyear"></span></b></h5>
-                          <hr>
-                          <h5 class="panel-body" id="card1"></h5></div>
-                          <!-- <div class="col-lg-1"></div> -->
-                       
+                          <select id="selDataset" onchange="optionChanged(this.value)">
+                          <option >USA</option></select>
+                          <br><br>
+                          <b> &nbsp &nbsp &nbsp &nbsp   Select Year:</b>
+                          <select id="selDataset2" onchange="optionChanged(this.value)">
+                            <option >ALL</option></select></h6>
+                            <br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-1"></div>
+                <div class="col-lg-6">
+                  <div class="card card2">
+                    <div class="row">
+                      <h4 id="text-effect3">Top 10 Rated Movies:</h4>
+                      <div class="col-lg-1"><div class="card-body">
+                        <h5 class="card-text center"></div></div>
+                         <div class="col-lg-6"><div class="card-body">
+                          <h5 class="card-text center" id="card1"></div></div>
+                            <div class="col-lg-5"><div class="card-body">
+                              <h5 class="card-text center" id="card2"></h5></div></div></div>
+
                 </div>
+              </div>
+            </div>
+            <br>
+            <div class="row">
                 <br>
                 <div class="row">
                   <div class="col-lg-5" id="chart1"></div>  
@@ -75,10 +97,11 @@
                   
 
         <br>
+        <br>
         <hr>
-
+        <br>
         <div class="row">
-          <h3>Comparitive Analysis</h3>
+          <h3 id="text-effect5">Comparitive Analysis</h3><p></p>
           <div class="col-lg-7"><div class='tableauPlaceholder' id='viz1634098252531' style='position: relative'><noscript><a href='#'><img alt='Story 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IM&#47;IMDBbudgetvsincome&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='IMDBbudgetvsincome&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;IM&#47;IMDBbudgetvsincome&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1634098252531');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1000px';vizElement.style.height='627px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script></div>   
           <div class="col-lg-2"></div>    
           <div class="col-lg-3">
@@ -116,10 +139,11 @@
                 </div>
           </div>
         </div>
-        <br>
+        <br><p></p><p></p>
         <hr>
+        <br>
         <div class="row">
-          <h3>Categorical Analysis</h3>
+          <h3 id="text-effect5">Categorical Analysis</h3>
           <select id="selDataset3" onchange="optionChanged(this.value)">
             <option >2020</option>
             <option >2019</option>
