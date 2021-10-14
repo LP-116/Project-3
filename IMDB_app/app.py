@@ -5,9 +5,12 @@ import pandas as pd
 import json
 import os
 
-from flask import Flask, jsonify, render_template, redirect
+from flask import Flask, jsonify, render_template, redirect, request
 from flask_pymongo import PyMongo
 import imdb_scrape
+from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
+import pickle
 
 
 # Create Flask
@@ -15,6 +18,8 @@ app = Flask(__name__)
 
 mongo = PyMongo(app, uri="mongodb://localhost:27017/imdb_app")
 
+with open('model.pkl', 'rb') as file:  
+    model = pickle.load(file)
 
 @app.route("/")
 def welcome():
@@ -33,10 +38,19 @@ def analysis():
     return render_template("analysis.html")
 
 
-@app.route("/machine learning.html")
+@app.route("/machine learning.html", methods=['GET', 'POST'])
 def machine_learining():
-
     
+    if request.method == 'POST':
+        duration = request.form['duration']
+        votes = request.form['votes']
+        metascore = request.form['metascore']    
+        budget = request.form['budget']
+
+        pred = model.predict(np.array([[int(duration), int(votes), int(metascore), int(budget)]]))
+        return render_template("machine learning.html", pred=str(pred))
+
+
     return render_template("machine learning.html")
 
 @app.route("/scrape")

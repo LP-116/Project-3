@@ -52,6 +52,14 @@
           <!-- Start of dashboard section. This is the right hand side of the grid.-->
           <br>
           <div class="container">
+            <form method=post enctype=multipart/form-data>
+              Duration:  <input type="number" name="duration"><br>
+              Votes: <input type=number name="votes"><br>
+              Metascore:  <input type=number name="metascore" max="100"><br>
+              Budget:  <input type=number name="budget"><br>
+              <input type=submit value=Submit>
+              </form>
+              My prediction: {{ pred }}
            
         </div>
 
