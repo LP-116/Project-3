@@ -25,8 +25,6 @@ function init() {
 
     d3.json("/year").then((item) => {
 
-        // console.log(item)
-
         year_list = []
 
         for (var i in item) {
@@ -100,14 +98,15 @@ function buildGraph() {
         console.log(top5_votes);
 
         // Create the graph using Chart.js
-        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
         var myChart = new Chart("myChart", {
         type: "horizontalBar",
 
         data: {
           labels: top5_movies,
           datasets: [{
-            backgroundColor: barColors,
+            backgroundColor: 'rgba(230, 92, 0, 0.8)',
+            borderColor: 'rgb(0, 0, 128)',
+            borderWidth: 1,
             data: top5_votes,
             grouped: true, 
             maxBarThickness: 50, 
@@ -194,14 +193,15 @@ function buildGraph() {
 
         
         // Create the graph using Chart.js
-        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF", "#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
-        var myChart1 = new Chart("myChart1", {
+               var myChart1 = new Chart("myChart1", {
         type: "horizontalBar",
 
         data: {
           labels: top5_movies2,
           datasets: [{
-            backgroundColor: barColors,
+            backgroundColor: 'rgba(0, 153, 0, 0.8)',
+            borderColor: 'rgb(0, 0, 128)',
+            borderWidth: 1,
             data: top5_profit,
             grouped: true, 
             maxBarThickness: 50, 
@@ -243,58 +243,6 @@ function buildGraph() {
 
             
     }})
-
-
-//     document.querySelector("#chart4").innerHTML = '<canvas id="myChart4"></canvas>';
-
-//     var myChart4 = new Chart("myChart4", {
-//     type: "horizontalBar",
-
-//     data: {
-//       labels: top5_movies2,
-//       datasets: [{
-//         backgroundColor: barColors,
-//         data: top5_profit,
-//         grouped: true, 
-//         maxBarThickness: 50, 
-//         label: "Income ($'Billion)",            
-//       }]
-//     },
-
-
-//     options: {
-
-//         indexAxis: 'y',
-//         responsive: true,
-//         maintainAspectRatio: false,
-
-//         title: {
-//                 display: true,
-//                 text: "Movies with the Highest Income",
-//                 fontSize: 16
-//             },
-        
-//         scales: {
-//                 xAxes: [{
-//                 ticks: {
-//                 beginAtZero: false,
-//                 grouped: true,
-//                 userCallback: function (value, index, values) {
-//                     // Convert the number to a string and splite the string every 3 charaters from the end
-//                     value = value.toString();
-//                     value = value.split(/(?=(?:...)*$)/);
-
-
-//                     // Convert the array to a string and format the output
-//                     value = value.join('.');
-//                     return '$' + value + "B";}
-//             }
-//             }]
-
-//         },
-
-        
-// }})
 
 })
 
