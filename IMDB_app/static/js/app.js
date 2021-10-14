@@ -93,22 +93,22 @@ function buildGraph() {
         }
 
         // Filter the list's to return top 5 results.
-        var top10_movies= movie_list.slice(0,10);
-        var top10_votes = votes_list.slice(0,10);
+        var top5_movies= movie_list.slice(0,5);
+        var top5_votes = votes_list.slice(0,5);
 
-        console.log(top10_movies);
-        console.log(top10_votes);
+        console.log(top5_movies);
+        console.log(top5_votes);
 
         // Create the graph using Chart.js
-        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF", "#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
+        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
         var myChart = new Chart("myChart", {
         type: "horizontalBar",
 
         data: {
-          labels: top10_movies,
+          labels: top5_movies,
           datasets: [{
             backgroundColor: barColors,
-            data: top10_votes,
+            data: top5_votes,
             grouped: true, 
             maxBarThickness: 50, 
             label: "No. of votes",            
@@ -124,22 +124,32 @@ function buildGraph() {
 
             title: {
                     display: true,
-                    text: "Movies with most no. of Ratings",
+                    text: "Movies with most no. of votes",
                     fontSize: 16
                 },
             
             scales: {
-                    yAxes: [{
+                    xAxes: [{
                     ticks: {
-                    beginAtZero: true,
-                    grouped: true
-                }
+                    beginAtZero: false,
+                    grouped: true,
+                    userCallback: function (value, index, values) {
+                        // Convert the number to a string and splite the string every 3 charaters from the end
+                        value = value.toString();
+                        value = value.split(/(?=(?:...)*$)/);
+
+
+                        // Convert the array to a string and format the output
+                        value = value.join(',');
+                        return value;}
+                    
+                },
                 }]
 
             },
-
             
-    }})})
+    }
+})})
 
     // Reading the incidents route data.
     d3.json("/profit").then((data) => {
@@ -169,18 +179,18 @@ function buildGraph() {
             }
 
             else if (data[i].country === idSelect && idSelect2 === "ALL"){
-                profit_list.push((data[i].worlwide_gross_income)/10000)
+                profit_list.push((data[i].worlwide_gross_income)/10000000)
                 movie_list.push(data[i].original_title)
             }
 
         }
 
         // Filter the list's to return top 5 results.
-        var top10_movies2 = movie_list.slice(0,10);
-        var top10_profit = profit_list.slice(0,10);
+        var top5_movies2 = movie_list.slice(0,5);
+        var top5_profit = profit_list.slice(0,5);
 
-        console.log(top10_movies2);
-        console.log(top10_profit);
+        console.log(top5_movies2);
+        console.log(top5_profit);
 
         
         // Create the graph using Chart.js
@@ -189,13 +199,13 @@ function buildGraph() {
         type: "horizontalBar",
 
         data: {
-          labels: top10_movies2,
+          labels: top5_movies2,
           datasets: [{
             backgroundColor: barColors,
-            data: top10_profit,
+            data: top5_profit,
             grouped: true, 
             maxBarThickness: 50, 
-            label: "Profit ($'000)",            
+            label: "Income ($'Billion)",            
           }]
         },
 
@@ -208,22 +218,85 @@ function buildGraph() {
 
             title: {
                     display: true,
-                    text: "Most Profitable Movies",
+                    text: "Movies with the Highest Income",
                     fontSize: 16
                 },
             
             scales: {
-                    yAxes: [{
+                    xAxes: [{
                     ticks: {
-                    beginAtZero: true,
-                    grouped: true
+                    beginAtZero: false,
+                    grouped: true,
+                    userCallback: function (value, index, values) {
+                        // Convert the number to a string and splite the string every 3 charaters from the end
+                        value = value.toString();
+                        value = value.split(/(?=(?:...)*$)/);
+
+
+                        // Convert the array to a string and format the output
+                        value = value.join('.');
+                        return '$' + value + "B";}
                 }
                 }]
 
             },
 
             
-    }})})
+    }})
+
+
+//     document.querySelector("#chart4").innerHTML = '<canvas id="myChart4"></canvas>';
+
+//     var myChart4 = new Chart("myChart4", {
+//     type: "horizontalBar",
+
+//     data: {
+//       labels: top5_movies2,
+//       datasets: [{
+//         backgroundColor: barColors,
+//         data: top5_profit,
+//         grouped: true, 
+//         maxBarThickness: 50, 
+//         label: "Income ($'Billion)",            
+//       }]
+//     },
+
+
+//     options: {
+
+//         indexAxis: 'y',
+//         responsive: true,
+//         maintainAspectRatio: false,
+
+//         title: {
+//                 display: true,
+//                 text: "Movies with the Highest Income",
+//                 fontSize: 16
+//             },
+        
+//         scales: {
+//                 xAxes: [{
+//                 ticks: {
+//                 beginAtZero: false,
+//                 grouped: true,
+//                 userCallback: function (value, index, values) {
+//                     // Convert the number to a string and splite the string every 3 charaters from the end
+//                     value = value.toString();
+//                     value = value.split(/(?=(?:...)*$)/);
+
+
+//                     // Convert the array to a string and format the output
+//                     value = value.join('.');
+//                     return '$' + value + "B";}
+//             }
+//             }]
+
+//         },
+
+        
+// }})
+
+})
 
 }
 

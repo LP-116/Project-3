@@ -54,9 +54,9 @@
           <div class="container">
             <form method=post enctype=multipart/form-data>
               Duration:  <input type=number name="duration" placeholder="120"><br>
-              Votes: <input id="txtBox" type="text" name="votes" placeholder="10000"><br>
+              Votes: <input type="currency" name="votes" placeholder="10,000"><br>
               Metascore:  <input type=number name="metascore" max="100" placeholder="100"><br>
-              Budget:  $<input id="myinput" type="currency" name="budget" placeholder="100,000,000"><br>
+              Budget:  $<input type="currency2" name="budget" placeholder="100,000,000"><br>
               <input type=submit value=Submit>
               </form>
               Movie rating prediction: {{ pred }}

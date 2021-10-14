@@ -53,35 +53,28 @@
           <br>
           <div class="container">
             <div class="row">
-              <div class="col-sm-1"></div>
-                  <div class="col-sm-2" id="user-selection">
-                    <div class="card card1">
-                      <div class="card-body">
-                        <h5><b>Select Country to update graph:</b></h5>
-                        <hr>
+                  <div class="col-lg-5" id="user-selection">
+                        <h6><b>Select Country:</b>
                         <select id="selDataset" onchange="optionChanged(this.value)">
                         <option >USA</option></select>
+                        <b>&nbsp &nbsp &nbsp Select Year:</b>
                         <select id="selDataset2" onchange="optionChanged(this.value)">
-                          <option >ALL</option></select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-lg-3">
-                    <h5><b>Top 10: Highest rated movies: &nbsp<span id="cardyear"></span></b></h5>
-                        <h5 class="panel-body" id="card1"></h5>
-                      </div>
-                      <div class="col-lg-3">
-                        <h5>&nbsp&nbsp</h5>
-                            <h5 class="panel-body" id="card2"></h5>
-                          </div>
-                    </div>
+                          <option >ALL</option></select></h6>
+                          <hr>
+                          <h5><b>Top 5: Highest Rated Movies: &nbsp<span id="cardyear"></span></b></h5>
+                          <hr>
+                          <h5 class="panel-body" id="card1"></h5></div>
+                          <!-- <div class="col-lg-1"></div> -->
+                    <div class="col-lg-6" id="chart1"></div>
+                </div>
                 <br>
-            <div class="row">
-              <div class="col-lg-6" id="chart1"></div>
+                <div class="row">
+                  
+                  <div class="col-lg-5"></div>
                 <div class="col-lg-6" id="chart2">
-              </div>
-            </div>
-        
+                </div></div>
+                  
+
         <br>
         <hr>
 
@@ -145,7 +138,7 @@
           </div>
         </div>
       </div>
-      
+    
 
         <!-- This script is required to get the drop down options to work.--> 
         <!-- Leaflet JS -->
