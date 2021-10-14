@@ -1,4 +1,3 @@
-
 function init() {
 
     d3.json("/map").then((item) => {

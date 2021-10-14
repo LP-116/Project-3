@@ -47,7 +47,7 @@ def machine_learining():
         metascore = request.form['metascore']    
         budget = request.form['budget']
 
-        pred = model.predict(np.array([[int(duration), int(votes), int(metascore), int(budget)]]))
+        pred = model.predict(np.array([[int(duration), int(votes), int(metascore), int(budget.replace(',', ''))]]))
         return render_template("machine learning.html", pred=str(pred))
 
 
