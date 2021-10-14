@@ -286,17 +286,28 @@ p.top-heading {
 }
 
 .card1 {
-  border-color: #cc0000;
+  /* border-color: #cc0000; */
   border-width: medium;
+  border: none;
   background-color: white
 }
 
 .card2 {
-  border-color: navy;
-  border-width: medium;
   width: 636px;
   height: 210px;
+  border: none;
+  background-color:#F0F0F0;
+
   
+}
+
+.card-body {
+  border: none;
+  background-color:#F0F0F0;
+}
+
+.note {
+  font-size: 10px
 }
 
 /* #viz1634094689338 {

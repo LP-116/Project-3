@@ -173,13 +173,13 @@ function buildGraph() {
 
 
             if(data[i].country === idSelect && data[i].year === parseInt(idSelect2)){
-                profit_list.push((data[i].worlwide_gross_income)/10000000)
+                profit_list.push((data[i].worlwide_gross_income)/1000000)
                 movie_list.push(data[i].original_title)
                 
             }
 
             else if (data[i].country === idSelect && idSelect2 === "ALL"){
-                profit_list.push((data[i].worlwide_gross_income)/10000000)
+                profit_list.push((data[i].worlwide_gross_income)/1000000)
                 movie_list.push(data[i].original_title)
             }
 
@@ -205,7 +205,7 @@ function buildGraph() {
             data: top5_profit,
             grouped: true, 
             maxBarThickness: 50, 
-            label: "Income ($'Billion)",            
+            label: "Income ($'Million)",            
           }]
         },
 
@@ -234,8 +234,8 @@ function buildGraph() {
 
 
                         // Convert the array to a string and format the output
-                        value = value.join('.');
-                        return '$' + value + "B";}
+                        value = value.join(',');
+                        return '$' + value + "M";}
                 }
                 }]
 

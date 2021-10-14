@@ -66,7 +66,7 @@ def scrape():
 @app.route("/rating")
 def rating():
 
-    rating_csv = "graph1-highest_rated.csv"
+    rating_csv = "./csv_files/graph1-highest_rated.csv"
     rating_df = pd.read_csv(rating_csv)
     rating_df = rating_df.sort_values("avg_vote", ascending=False)
     
@@ -79,7 +79,7 @@ def rating():
 @app.route("/votes")
 def votes():
 
-    votes_csv = "graph1-highest_rated.csv"
+    votes_csv = "./csv_files/graph1-highest_rated.csv"
     votes_df = pd.read_csv(votes_csv)
     votes_df = votes_df.sort_values("votes", ascending=False)
     
@@ -92,7 +92,7 @@ def votes():
 @app.route("/profit")
 def profit():
 
-    profit_csv = "graph2-profit.csv"
+    profit_csv = "./csv_files/graph2-profit.csv"
     profit_df = pd.read_csv(profit_csv)
     
     profit_data = profit_df.to_dict('records')
@@ -104,7 +104,7 @@ def profit():
 @app.route("/production")
 def production():
 
-    production_csv = "production.csv"
+    production_csv = "./csv_files/production.csv"
     production_df = pd.read_csv(production_csv)
     production_df = production_df.rename(columns={"0":"count"})
     
@@ -150,7 +150,7 @@ def production():
 @app.route("/map")
 def map():
 
-    country_csv = "movies per country.csv"
+    country_csv = "./csv_files/movies per country.csv"
     country_df = pd.read_csv(country_csv)
     country_df = country_df.rename(columns={"0":"count"})
     
@@ -162,7 +162,7 @@ def map():
 @app.route("/year")
 def year():
 
-    year_csv = "year list.csv"
+    year_csv = "./csv_files/year list.csv"
     year_df = pd.read_csv(year_csv)
     
     year_data = year_df.to_dict('records')
@@ -173,7 +173,7 @@ def year():
 @app.route("/genre")
 def genre():
 
-    genre_csv = "genre.csv"
+    genre_csv = "./csv_files/genre.csv"
     genre_df = pd.read_csv(genre_csv)
     
     genre_data = genre_df.to_dict('records')
