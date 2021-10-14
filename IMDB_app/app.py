@@ -180,7 +180,15 @@ def genre():
 
     return jsonify(genre_data)    
 
+@app.route("/piegenre")
+def piegenre():
 
+    pie_csv = "./csv_files/pie-genre.csv"
+    pie_df = pd.read_csv(pie_csv)
+    
+    pie_data = pie_df.to_dict('records')
+
+    return jsonify(pie_data)    
 
 if __name__ == "__main__":
     app.run(debug=True)

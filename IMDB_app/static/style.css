@@ -231,7 +231,7 @@ p.top-heading {
 #text-effect3 {
 
   font: 22px "Lato", sans-serif;
-  color:navy;
+  color:black;
   font: italic;
   text-align: center;
   /* text-align: center; */
@@ -280,8 +280,8 @@ p.top-heading {
 
 
 #chart3 {
-  width: 1000px;
-  height: 500px;
+  width: 600px;
+  height: 400px;
 
 }
 

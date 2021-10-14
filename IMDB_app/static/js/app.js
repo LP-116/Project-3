@@ -368,14 +368,16 @@ function buildGraph2() {
 
         }
 
-        const barColors = ["#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF", "#87CEEB", "#1E90FF", "#00008B", "#1f50cc", "#1E90FF"]
+       
         var myChart1 = new Chart("myChart3", {
         type: "bar",
 
         data: {
           labels: genre_list,
           datasets: [{
-            backgroundColor: barColors,
+            backgroundColor: 'rgb(230, 0, 0)',
+            borderColor: 'rgb(0, 0, 128)',
+            borderWidth: 1,
             data: income_list,
             grouped: true, 
             maxBarThickness: 50, 
@@ -400,18 +402,94 @@ function buildGraph2() {
                     yAxes: [{
                     ticks: {
                     beginAtZero: true,
-                    grouped: true
+                    grouped: true,
+                    userCallback: function (value, index, values) {
+                        // Convert the number to a string and splite the string every 3 charaters from the end
+                        value = value.toString();
+                        value = value.split(/(?=(?:...)*$)/);
+
+
+                        // Convert the array to a string and format the output
+                        value = value.join(',');
+                        return '$' + value;}
                 }
                 }]
             },
 
         }
+    })
 })
 
+        d3.json("/piegenre").then((data) => {
+
+            // Clearing the existing chart space to avoid overlap issues.
+            document.querySelector("#chart4").innerHTML = '<canvas id="myChart4"></canvas>';
+
+            // Getting the suburb value in the dropdown box.
+            var idSelect3 = d3.select("#selDataset3").property("value");
+
+            console.log(idSelect3);
+
+            // Creating blank lists to hold results.
+
+            genre_list = []
+            count_list = []
+
+            // Everytime the suburb in the dropdown box is matched to the json data, push the required part into the matching list.
+            for (var i in data) {
 
 
-})};
+                if(data[i].year === parseInt(idSelect3)){
+                    genre_list.push(data[i].genre)
+                    count_list.push(data[i].original_title)
+                    
+                }
 
+            }
+
+            var top5_genre = genre_list.slice(0,5);
+            var top5_count = count_list.slice(0,5);
+
+            var myChart4 = new Chart("myChart4", {
+                        type: 'pie',
+                        data:  {
+                        labels: top5_genre,
+                        datasets: [{
+                          label: 'Most movies made in year (TOP 5 Genres)',
+                          data: top5_count,
+                          backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            'rgb(255, 205, 86)',
+                            'rgb(0, 0, 128)',
+                            'rgb(0, 120, 0)'
+                          ],
+                          hoverOffset: 4,
+                         
+                        }],
+                    },
+                        options: {
+                            responsive: true,
+                            legend: {
+                                display: true,
+                                position: 'right',
+                                labels: {
+                                    fontColor: "black",
+                                    boxWidth: 20,
+                                    padding: 20
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'TOP 5 Genres (most movies made in selected year)',
+                                fontSize: 16
+                            },
+                        }
+                      
+                   
+            })
+        })
+    }
 
 // Each time the drop down selection is changed, run the functions.
 function optionChanged()
