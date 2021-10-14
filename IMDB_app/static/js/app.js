@@ -351,7 +351,7 @@ function updatestats() {
         combined.forEach(([key, value]) => {
             infoBox
                 .append("h6")
-                .text(number + ". " + key + ": " + value)
+                .text(number + ". " + key + ":   " + value)
                 .append("br");
 
                 number+=1

@@ -198,9 +198,13 @@ p.top-heading {
   height: 50%;
 }
 
-/* .card {
+/* #card1 {
   border-radius: 10px;
-  border: 2px solid orange
+  border: 2px solid orange;
+  font-size:19px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 } */
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300");
@@ -229,13 +233,13 @@ p.top-heading {
 }
 
 #chart1 {
-  width: 700px;
+  width: 600px;
   height: 300px;
 
 }
 
 #chart2 {
-  width: 700px;
+  width: 600px;
   height: 300px;
 
 }
