@@ -173,7 +173,7 @@ function buildGraph() {
 
 
             if(data[i].country === idSelect && data[i].year === parseInt(idSelect2)){
-                profit_list.push((data[i].worlwide_gross_income)/10000)
+                profit_list.push((data[i].worlwide_gross_income)/10000000)
                 movie_list.push(data[i].original_title)
                 
             }
