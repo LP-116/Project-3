@@ -366,10 +366,17 @@ p.text-effect2 {
 }
 
 #pic {
-  float: right; 
-  margin: 0px 0px 15px 15px;
+  float: right
 }
 
+.stats {
+  float:left;
+  font-size: 14px;
+}
+
+.actual {
+  color:red
+}
 
 /* Animation */
 .text-effect2 {
