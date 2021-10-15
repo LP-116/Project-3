@@ -52,17 +52,86 @@
           <!-- Start of dashboard section. This is the right hand side of the grid.-->
           <br>
           <div class="container">
-            <form method=post enctype=multipart/form-data>
-              Duration:  <input type=number name="duration" placeholder="120"><br>
-              Votes: <input type="currency" name="votes" placeholder="10,000"><br>
-              Metascore:  <input type=number name="metascore" max="100" placeholder="100"><br>
-              Budget:  $<input type="currency2" name="budget" placeholder="100,000,000"><br>
-              <input type=submit value=Submit>
-              </form>
-              Movie rating prediction: {{ pred }}
-           
-        </div>
+            <div class="row">
+              <div class="col-lg-12">
+              <h3 id="text-effect5">Machine Learning - Movie Rating Predictor</h3>
+            </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-lg-2"></div>
+                <div class="col-lg-3">
+                  <div class="card mb-3">
+                    <div class="card-header text-center"> 
+                      Make Your Prediction!
+                    </div>
+                    <div class="card-body">
+                      <div class="input-values input1">
+                        <form method=post enctype=multipart/form-data>
+                        Movie duration (in minutes):  <input class="input1" type=number name="duration" min="1" placeholder="120"><br></div>
+                        <div class="input-values">
+                        No. of votes received: <input class="input1" type="currency" name="votes" min="1" placeholder="10,000"><br></div>
+                        <div class="input-values">
+                        Metascore (maximum value of 100):  <input class="input1" type=number name="metascore" min="1" max="100" placeholder="100"><br></div>
+                        <div class="input-values">
+                        Movie budget:  $<input class="input1" type="currency2" name="budget" min="1" placeholder="100,000,000"><br></div>
+                        <hr>
+                        <div class="input-values text-center">
+                        <input type=submit value=Submit></div>
+                        </form>
+                        <div class="text-center"><b>Movie rating prediction: {{ pred }}</b></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet ornare accumsan. Maecenas dictum malesuada nibh, at placerat leo finibus a. Donec iaculis dolor ligula, eget semper erat feugiat eget. Etiam faucibus tortor a ex condimentum, eu malesuada ipsum congue. Etiam elementum mollis massa et consectetur. Nunc pulvinar ac magna ut eleifend. Morbi eleifend finibus turpis, at cursus augue luctus quis. Donec laoreet nisi nec congue ultrices. Sed tempus lorem quis orci scelerisque, vitae dictum augue suscipit. Mauris ultricies euismod ornare.
+                    Suspendisse lobortis est placerat dolor congue luctus. Integer quam purus, consequat ac molestie quis, cursus et lorem. Quisque tristique dui magna, vitae ornare felis ultricies sed. Phasellus sapien arcu, blandit et lectus ac, rhoncus accumsan lorem. Integer purus turpis, fringilla sit amet magna sit amet, cursus lacinia risus. Aliquam lectus elit, gravida ut consectetur eget, molestie nec tellus. Nullam et leo ante. Quisque imperdiet blandit feugiat.</p>
+                  </div>
+              </div>
 
+              <div class="row">
+                <div class="col-lg-12 text-center"> <h5>Use the below examples to try the predictor! Or alternatively you can create your own numbers.</h5></div>
+              </div>
+              <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-2">
+                  <div class="card mb-2">
+                    <div class="card-header text-center"> 
+                    </div>
+                    <div class="card-body">
+                  <p></p>
+                  </div>
+                </div>
+                </div>
+                  <div class="col-lg-2">
+                    <div class="card mb-2">
+                      <div class="card-header text-center"> 
+                        </div>
+                        <div class="card-body">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-2">
+                  <div class="card mb-2">
+                    <div class="card-header text-center"> 
+                    </div>
+                    <div class="card-body">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="card mb-2">
+                <div class="card-header text-center"> 
+                </div>
+                <div class="card-body">
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-1"></div>
+        </div>
 
         <!-- This script is required to get the drop down options to work.--> 
         <!-- Leaflet JS -->

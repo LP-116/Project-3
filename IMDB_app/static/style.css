@@ -358,6 +358,13 @@ p.text-effect2 {
   text-align: center;
 }
 
+
+.input1 {
+
+  align-items: stretch;
+  width: 100%
+}
+
 /* Animation */
 .text-effect2 {
   animation: animated-text 4s linear 1s 1 normal both,
