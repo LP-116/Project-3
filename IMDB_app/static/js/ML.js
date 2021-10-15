@@ -1,3 +1,23 @@
+var filterButton =  d3.select(".btn4");
+
+filterButton.on("click", resetFilter);
+
+function resetFilter() {
+
+    document.querySelector(".input1").value = '';
+
+};
+
+function empty() {
+    var x;
+    x = document.querySelector(".input1").value;
+    if (x == "") {
+        alert("There is an error in your prediction. Please ensure all fields have a number and try again.");
+        return false;
+    };
+}
+
+// Below code was found and adapted via stackoverflow:
 // Reference: https://stackoverflow.com/questions/24163889/html5-input-for-money-currency
 
 var currencyInput = document.querySelector('input[type="currency"]')

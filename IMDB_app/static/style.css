@@ -137,6 +137,29 @@ ul {
   font-size: 12px;
 }
 
+.btn5 {
+  background-color: lightslategrey;
+  color: white;
+  border: 2px solid black;
+  text-decoration: none;
+  border-radius: 2px;
+  padding: 9.5px;
+  margin: 9.5px;
+  font-size: 14px;
+  font: "Lato", sans-serif;
+}
+
+#submitbutton {
+  background-color: lightslategrey;
+  color: white;
+  border: 2px solid black;
+  text-decoration: none;
+  border-radius: 2px;
+  padding: 8px;
+  margin: 8px;
+  font-size: 14px;
+  font: "Lato", sans-serif;
+}
 
 
 .date {
@@ -194,18 +217,10 @@ p.top-heading {
 .img-overlay:before {
   content: ' ';
   display: block;
-  /* adjust 'height' to position overlay content vertically */
   height: 50%;
 }
 
-/* #card1 {
-  border-radius: 10px;
-  border: 2px solid orange;
-  font-size:19px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-} */
+
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300");
 
@@ -234,7 +249,6 @@ p.top-heading {
   color:black;
   font: italic;
   text-align: center;
-  /* text-align: center; */
 
 }
 
@@ -243,7 +257,6 @@ p.top-heading {
   font: 20px "Lato", sans-serif;
   color:navy;
   font: italic;
-  /* text-align: center; */
 
 }
 
@@ -286,7 +299,6 @@ p.top-heading {
 }
 
 .card1 {
-  /* border-color: #cc0000; */
   border-width: medium;
   border: none;
   background-color: white
@@ -310,9 +322,7 @@ p.top-heading {
   font-size: 10px
 }
 
-/* #viz1634094689338 {
-  height: 300px;
-} */
+
 
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
 /*Reference: https://codepen.io/aakhya/pen/bQeJaX */
@@ -362,11 +372,14 @@ p.text-effect2 {
 .input1 {
 
   align-items: stretch;
-  width: 100%
+  width: 95%;
+  margin: 4px 
+
 }
 
 #pic {
-  float: right
+  float: right;
+  margin: 1px 7px 5px 5px
 }
 
 .stats {
@@ -377,6 +390,25 @@ p.text-effect2 {
 .actual {
   color:red
 }
+
+.card-body {
+  margin: 1px 1px 1px 1px;
+}
+
+.card-header {
+  background-color:royalblue;
+  color: white
+}
+
+.card-header1 {
+  background-color:#ff9933;
+  color: white
+}
+
+.card5 {
+  border-color: lightslategrey;
+} 
+
 
 /* Animation */
 .text-effect2 {
