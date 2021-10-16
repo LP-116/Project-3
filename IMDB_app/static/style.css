@@ -348,6 +348,7 @@ p.top-heading {
   color:white;
   max-width: 100%;
   overflow-x: hidden;
+  align-items: center;
 }
 
 .nav-link {

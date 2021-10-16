@@ -1,6 +1,6 @@
 function init() {
 
-    d3.json("/map").then((item) => {
+    d3.json("/country").then((item) => {
 
         // console.log(item)
 

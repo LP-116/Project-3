@@ -21,6 +21,7 @@ mongo = PyMongo(app, uri="mongodb://localhost:27017/imdb_app")
 with open('model.pkl', 'rb') as file:  
     model = pickle.load(file)
 
+
 @app.route("/")
 def welcome():
 
@@ -30,12 +31,12 @@ def welcome():
     return render_template("index.html", imdb=imdb_data)
 
 
-
 @app.route("/analysis.html")
 def analysis():
 
     
     return render_template("analysis.html")
+
 
 
 @app.route("/machine learning.html", methods=['GET', 'POST'])
@@ -52,6 +53,16 @@ def machine_learining():
 
 
     return render_template("machine learning.html")
+
+
+@app.route("/database.html")
+def database():
+
+    
+    return render_template("database.html")
+
+
+
 
 @app.route("/scrape")
 def scrape():
@@ -101,54 +112,9 @@ def profit():
     return jsonify(profit_data)
 
 
-@app.route("/production")
-def production():
 
-    production_csv = "./csv_files/production.csv"
-    production_df = pd.read_csv(production_csv)
-    production_df = production_df.rename(columns={"0":"count"})
-    
-    production_data = production_df.to_dict('records')
-
-
-    return jsonify(production_data)
-
-
-# @app.route("/budget")
-# def budget():
-
-#     budget_csv = "graph4-budget vs profit.csv"
-#     budget_df = pd.read_csv(budget_csv)
-    
-#     budget_data = budget_df.to_dict('records')
-
-#     return jsonify(budget_data)
-
-
-# @app.route("/unfiltered_votes")
-# def unfiltered():
-
-#     unfiltered_votes_csv = "votes_unfiltered(profit vs rating).csv"
-#     unfiltered_votes_df = pd.read_csv(unfiltered_votes_csv)
-    
-#     unfiltered_data = unfiltered_votes_df.to_dict('records')
-
-#     return jsonify(unfiltered_data)
-
-
-# @app.route("/filtered_votes")
-# def filtered():
-
-#     filtered_votes_csv = "votes_filtered(votes vs rating).csv"
-#     filtered_votes_df = pd.read_csv(filtered_votes_csv)
-    
-#     filtered_data = filtered_votes_df.to_dict('records')
-
-#     return jsonify(filtered_data)
-
-
-@app.route("/map")
-def map():
+@app.route("/country")
+def country():
 
     country_csv = "./csv_files/movies per country.csv"
     country_df = pd.read_csv(country_csv)
