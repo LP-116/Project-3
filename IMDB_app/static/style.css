@@ -185,6 +185,10 @@ ul {
   font: "Lato", sans-serif;
 }
 
+.fact {
+  color:purple;
+}
+
 .date {
   display: block;
   margin-bottom: 0em;
