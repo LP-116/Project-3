@@ -1,3 +1,4 @@
+// Function to populate the dropdown box with movie titles.
 function init() {
 
     d3.json("/title").then((item) => {
@@ -67,7 +68,7 @@ function runFilter() {
     
     var tbody = d3.select("tbody");
     
-    // Using the data_tab route.
+    // Using the data route.
     d3.json("/data").then((data)=> {
         
         // Filter the results on suburb and year.
