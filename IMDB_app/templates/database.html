@@ -27,26 +27,26 @@
 
     <body>
       <nav class="navbar navbar-expand-lg navbar-custom py-1">
-            <div class="container">
-              <a class="navbar-brand" href="/"><img src="../static/images/movie1.png" width="32" height="30" class="d-inline-block align-text-top"> Home </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto">
-                  <li class="nav-item">
-                    <a class="nav-link" href="analysis.html">Analysis</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="database.html">Data</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="machine learning.html">Machine Learning</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav> <!-- End of Navbar -->
+        <div class="container">
+          <a class="navbar-brand" href="/"><img src="../static/images/movie1.png" width="32" height="30" class="d-inline-block align-text-top"> Home </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="analysis.html">Analysis</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="machine learning.html"> &nbsp Machine Learning</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="database.html"> &nbsp Database</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav> 
 
           <!-- Start of dashboard section. This is the right hand side of the grid.-->
           <br>
@@ -58,6 +58,19 @@
               <h6 class="text-center">* Note: This database is limited to movies made in the USA, Australia, UK or New Zealand.</h6>
             </div>
             </div>
+            <div class="row">
+              <div class="col-lg-1"></div>
+              <div class="col-lg-2"></div>
+                <div class="col-lg-2" id="user-selection">
+                  <div class="form-group">
+                    <div class="list-group" id="filters">
+                        <input id="suburbSelect" list="myList" type="search" placeholder="Select Movie Title">
+                        <datalist id="myList"></datalist>
+                      </div> 
+                    </div>
+                  </div>
+
+
           </div>
         
 
