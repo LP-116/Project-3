@@ -344,6 +344,12 @@ p.top-heading {
   background-color: lightslategrey;
 }
 
+.footer {background-color: lightslategrey;
+  color:white;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 .nav-link {
   color: white;
 }

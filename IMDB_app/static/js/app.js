@@ -368,14 +368,14 @@ function buildGraph2() {
 
         }
 
-       
+        var colors = ['rgb(230, 0, 0)', 'rgb(255, 128, 0)', 'rgb(0, 64, 255)', 'rgb(128, 0, 255)', 'rgb(0, 153, 0)', 'rgb(0, 204, 255)', 'rgb(255, 102, 204)']
         var myChart1 = new Chart("myChart3", {
         type: "bar",
 
         data: {
           labels: genre_list,
           datasets: [{
-            backgroundColor: 'rgb(230, 0, 0)',
+            backgroundColor: colors,
             borderColor: 'rgb(0, 0, 128)',
             borderWidth: 1,
             data: income_list,
@@ -460,7 +460,7 @@ function buildGraph2() {
                           label: 'Most movies made in year (TOP 5 Genres)',
                           data: top5_count,
                           backgroundColor: [
-                            'rgb(0, 204, 255)',
+                            'rgb(230, 0, 0)',
                             'rgb(255, 128, 0)',
                             'rgb(0, 64, 255)',
                             'rgb(128, 0, 255)',
