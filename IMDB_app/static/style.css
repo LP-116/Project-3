@@ -161,6 +161,29 @@ ul {
   font: "Lato", sans-serif;
 }
 
+.btn6 {
+  background-color: lightslategrey;
+  color: white;
+  border: 2px solid black;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 2px;
+  margin: 2px;
+  font: "Lato", sans-serif;
+}
+
+#filter-btn {
+  background-color: lightslategrey;
+  color: white;
+  border: 2px solid black;
+  text-decoration: none;
+  border-radius: 2px;
+  font-size: 14px;
+  padding: 2px;
+  margin: 2px;
+  font: "Lato", sans-serif;
+}
 
 .date {
   display: block;
@@ -320,6 +343,11 @@ p.top-heading {
 
 .note {
   font-size: 10px
+}
+
+
+.table-condensed{
+  font-size: 12px;
 }
 
 
