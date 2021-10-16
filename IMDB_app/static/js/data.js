@@ -71,7 +71,7 @@ function runFilter() {
     // Using the data route.
     d3.json("/data").then((data)=> {
         
-        // Filter the results on suburb and year.
+        // Filter the results on movie title.
         var filteredData = data.filter(dataEntry => ((dataEntry.A_original_title === movieValue)))
 
         console.log(filteredData);
@@ -86,7 +86,7 @@ function runFilter() {
             tbody.text("No results for selected inputs.");
             stopSpinner()}
     
-        // Else, populate the table with the filtereddata results.
+        // Else, populate the table with the filteredData results.
         else {
         
         tbody.html("");
