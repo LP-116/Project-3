@@ -344,10 +344,24 @@ p.top-heading {
   background-color: lightslategrey;
 }
 
-.footer {background-color: lightslategrey;
+.footer {
+  background-color: lightslategrey;
   color:white;
-  max-width: 100%;
+  width: 100%;
   overflow-x: hidden;
+  position: bottom;
+  bottom: 0;
+
+}
+
+.footer1 {
+  background-color: lightslategrey;
+  color:white;
+  width: 100%;
+  overflow-x: hidden;
+  position: fixed;
+  bottom: 0;
+
 }
 
 .nav-link {
