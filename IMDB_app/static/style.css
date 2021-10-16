@@ -354,24 +354,6 @@ p.top-heading {
   font-size: 12px;
 }
 
-
-
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
-/*Reference: https://codepen.io/aakhya/pen/bQeJaX */
-
-.text-effect2 {
-  border-right: solid 5px rgba(255,255,255,.75);
-  white-space: nowrap;
-  overflow: hidden;    
-  font-family: "Lucida Handwriting", "Brush Script MT", cursive;
-  font-size: 22px;
-  color:black;
-  font: italic;
-  text-shadow: 1px 1px orange;
-  text-align: center !important;
-
-}
-
 .navbar-custom {
   background-color: lightslategrey;
 }
@@ -443,9 +425,7 @@ p.text-effect2 {
   color:red
 }
 
-/* .card-body {
-  margin: 1px 1px 1px 1px;
-} */
+
 
 .card-header {
   background-color:royalblue;
@@ -460,6 +440,26 @@ p.text-effect2 {
 .card5 {
   border-color: lightslategrey;
 } 
+
+
+/* Below animation code was found at the below: */
+/*Reference: https://codepen.io/aakhya/pen/bQeJaX */
+
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+.text-effect2 {
+  border-right: solid 5px rgba(255,255,255,.75);
+  white-space: nowrap;
+  overflow: hidden;    
+  font-family: "Lucida Handwriting", "Brush Script MT", cursive;
+  font-size: 22px;
+  color:black;
+  font: italic;
+  text-shadow: 1px 1px orange;
+  text-align: center !important;
+
+}
+
 
 
 /* Animation */

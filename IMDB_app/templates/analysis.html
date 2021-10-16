@@ -127,7 +127,7 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSeven">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseThree">
-                        General Findings
+                        General Insights
                       </button>
                     </h2>
                     <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
@@ -155,7 +155,8 @@
         <br>
         <div class="row">
           <h3 id="text-effect5">Categorical Analysis</h3>
-          <br><p></p>
+          <h6 class="text-center">*Note: Data used in this section is based on USA movies only.</h6>
+          <br>
           <div class="col-lg-12">
           <h5 class="text-center" id="text-effect4"> Select year to explore dataset: &nbsp
           <select id="selDataset3" onchange="optionChanged(this.value)">
@@ -185,12 +186,14 @@
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingfive">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Accordion Item #1
+                    Most profitable graph insights. 
                   </button>
                 </h2>
                 <div id="flush-collapsefive" class="accordion-collapse collapse" aria-labelledby="flush-headingfive" data-bs-parent="#accordionFlushExample">
-                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
-                </div>
+                  <div class="accordion-body">Action movies dominate in the profitability category!
+                    <p>They outrank the other genres by long way in every year in the dataset.</p>
+                    <p>Animation seems to come in 2nd place over the years, with comedy coming in 3rd.</p>
+                  </div></div>
               </div>
             </div>
           </div>
@@ -200,11 +203,19 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingsix">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsesix" aria-expanded="false" aria-controls="flush-collapseOne">
-                        Accordion Item #1
+                        <span class="text-center">Genre pie graph insights.</span>
                       </button>
                     </h2>
                     <div id="flush-collapsesix" class="accordion-collapse collapse" aria-labelledby="flush-headingsix" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                      <div class="accordion-body">
+                        Interestingly, even though Action movies bring in the most income, there are more comedy movies made.
+                         <p></p><p>It is also worth nothing that there are no where near as many animated movies made per year but the income generated from the
+                          movies that are released is quite impressive. 
+                          <p>It would be interesting to investigate the profit per genre taking into account how many movies were made.</p>
+                          <p>For example: in 2019, 109 action movies were made with a profit of $11 Billion. 
+                            In the same year only 22 animated movies were made with a profit of $5.3 Billion.</p>
+                        </p>
+                      </div>
                     </div>
                 </div>
               </div>

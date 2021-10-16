@@ -381,7 +381,7 @@ function buildGraph2() {
             data: income_list,
             grouped: true, 
             maxBarThickness: 50, 
-            label: "Profit ($'000)",            
+            label: "Profit",            
           }]
         },
 
