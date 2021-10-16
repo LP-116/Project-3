@@ -10,11 +10,34 @@ function resetFilter() {
 
 function empty() {
     var x;
-    x = document.querySelector(".input1").value;
+    x = document.querySelector(".line1").value;
     if (x == "") {
         alert("There is an error in your prediction. Please ensure all fields have a number and try again.");
         return false;
     };
+
+    var a;
+    a = document.querySelector(".line2").value;
+    if (a == "") {
+        alert("There is an error in your prediction. Please ensure all fields have a number and try again.");
+        return false;
+    };
+
+    var b;
+    b = document.querySelector(".line3").value;
+    if (b == "") {
+        alert("There is an error in your prediction. Please ensure all fields have a number and try again.");
+        return false;
+    };
+
+    var c;
+    c = document.querySelector(".line4").value;
+    if (c == "") {
+        alert("There is an error in your prediction. Please ensure all fields have a number and try again.");
+        return false;
+    };
+
+
 }
 
 // Below code was found and adapted via stackoverflow:
