@@ -361,7 +361,7 @@ function buildGraph2() {
 
             if(data[i].year === parseInt(idSelect3)){
                 genre_list.push(data[i].genre)
-                income_list.push(data[i].worlwide_gross_income)
+                income_list.push(data[i].worlwide_gross_income/1000000000)
                 
             }
 
@@ -416,7 +416,8 @@ function buildGraph2() {
 
                         // Convert the array to a string and format the output
                         value = value.join(',');
-                        return '$' + value;}
+                        return '$' + value +"B";}
+                        
                 }
                 }]
             },
