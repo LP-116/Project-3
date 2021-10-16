@@ -62,8 +62,6 @@ def database():
     return render_template("database.html")
 
 
-
-
 @app.route("/scrape")
 def scrape():
 
@@ -146,6 +144,8 @@ def genre():
 
     return jsonify(genre_data)    
 
+
+
 @app.route("/piegenre")
 def piegenre():
 
@@ -154,7 +154,32 @@ def piegenre():
     
     pie_data = pie_df.to_dict('records')
 
-    return jsonify(pie_data)    
+    return jsonify(pie_data) 
+
+
+
+@app.route("/data")
+def data():
+
+    database_csv = "./csv_files/database.csv"
+    database_df = pd.read_csv(database_csv)
+    
+    data = database_df.to_dict('records')
+
+    return jsonify(data) 
+
+
+@app.route("/title")
+def title():
+
+    title_csv = "./csv_files/titles.csv"
+    title_df = pd.read_csv(title_csv)
+    
+    title_data = title_df.to_dict('records')
+
+    return jsonify(title_data) 
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
