@@ -381,7 +381,7 @@ function buildGraph2() {
             data: income_list,
             grouped: true, 
             maxBarThickness: 50, 
-            label: "Profit",            
+            label: "Income",            
           }]
         },
 
@@ -394,7 +394,7 @@ function buildGraph2() {
 
             title: {
                     display: true,
-                    text: "Most Profitable Movies",
+                    text: "Movies genres with the highest income",
                     fontSize: 16
                 },
             
