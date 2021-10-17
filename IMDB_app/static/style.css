@@ -248,6 +248,10 @@ p.top-heading {
   height: 50%;
 }
 
+a {
+  text-decoration: none;
+}
+
 
 
 @import url("https://fonts.googleapis.com/css?family=Lato:300");

@@ -62,6 +62,13 @@ def database():
     return render_template("database.html")
 
 
+@app.route("/contact.html")
+def contact():
+
+    
+    return render_template("contact.html")
+
+
 @app.route("/scrape")
 def scrape():
 
