@@ -16,12 +16,16 @@ import pickle
 # Create Flask
 app = Flask(__name__)
 
-mongo = PyMongo(app, uri="mongodb://localhost:27017/imdb_app")
+app.config['MONGODB_URI'] = "mongodb+srv://imdb:TbeyYAZQ7TDzIYxY@imdb-app.bpkwb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+mongo = PyMongo(app, uri="mongodb+srv://imdb:TbeyYAZQ7TDzIYxY@imdb-app.bpkwb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+
 
 with open('model.pkl', 'rb') as file:  
     model = pickle.load(file)
 
 
+# Welcome page route.
 @app.route("/")
 def welcome():
 
@@ -31,6 +35,7 @@ def welcome():
     return render_template("index.html", imdb=imdb_data)
 
 
+# Analysis page route.
 @app.route("/analysis.html")
 def analysis():
 
@@ -38,7 +43,7 @@ def analysis():
     return render_template("analysis.html")
 
 
-
+# Machine learning route that reads in the user inputs and passes them through the model.
 @app.route("/machine learning.html", methods=['GET', 'POST'])
 def machine_learining():
     
@@ -54,21 +59,21 @@ def machine_learining():
 
     return render_template("machine learning.html")
 
-
+# Database route.
 @app.route("/database.html")
 def database():
 
     
     return render_template("database.html")
 
-
+# Contact page route.
 @app.route("/contact.html")
 def contact():
 
     
     return render_template("contact.html")
 
-
+# Route used for the web scraping.
 @app.route("/scrape")
 def scrape():
 
@@ -79,6 +84,7 @@ def scrape():
     return redirect("/")
 
 
+# Route used for the movie rating graph.
 @app.route("/rating")
 def rating():
 
@@ -92,6 +98,7 @@ def rating():
     return jsonify(rating_data)
 
 
+# Route used for the number of votes graph.
 @app.route("/votes")
 def votes():
 
@@ -105,6 +112,7 @@ def votes():
     return jsonify(votes_data)
 
 
+# Route used for the income graph.
 @app.route("/profit")
 def profit():
 
@@ -117,7 +125,7 @@ def profit():
     return jsonify(profit_data)
 
 
-
+# Route used to populate the country drop down.
 @app.route("/country")
 def country():
 
@@ -130,6 +138,7 @@ def country():
     return jsonify(country_data)
 
 
+# Route used to populate the year drop downs.
 @app.route("/year")
 def year():
 
@@ -141,6 +150,7 @@ def year():
     return jsonify(year_data)
 
 
+# Route used to complete the genre bar graph.
 @app.route("/genre")
 def genre():
 
@@ -152,7 +162,7 @@ def genre():
     return jsonify(genre_data)    
 
 
-
+# Route used for the pie chart.
 @app.route("/piegenre")
 def piegenre():
 
@@ -164,7 +174,7 @@ def piegenre():
     return jsonify(pie_data) 
 
 
-
+# Route used for the database tab.
 @app.route("/data")
 def data():
 
@@ -176,6 +186,7 @@ def data():
     return jsonify(data) 
 
 
+# Route used to populate the movie title drop down menu.
 @app.route("/title")
 def title():
 

@@ -64,11 +64,12 @@
 
               <div class="col-lg-3">
                 <p class="top-heading"><b>&nbsp &nbsp Top box office movies (US)&nbsp <a class="btn4" id="filter-btn1" href="../scrape" role="button" onclick="startSpinner1()"><b>Update details</b></a></b><br class="date">
-                  &nbsp &nbsp &nbsp <small class="top-heading2">{{ imdb.Date }}  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</small></p> 
+                  &nbsp &nbsp &nbsp <small class="top-heading2">{{ imdb.Date }}  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</small>
+                </p> 
 
                 <div class="card animated-box in">
                   <div class="card-body">
-                    <ul style="list-style: none;">
+                  <ul style="list-style: none;">
                     <li class="text5"><b>1. {{ imdb.Title[0] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[0] }}</li> <hr>
                     <li class="text5"><b>2. {{ imdb.Title[1] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[1] }}</li> <hr>
                     <li class="text5"><b>3. {{ imdb.Title[2] }}</b></li> <li class="text5">Profit: {{ imdb.Profit[2] }}</li> <hr>
