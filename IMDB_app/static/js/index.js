@@ -1,3 +1,5 @@
+// Scripts to make the web scraping button appear as loading when clicked.
+
 function startSpinner1() {
     // Code to make the spinner start
     $("#filter-btn1").prop("disabled", true);
