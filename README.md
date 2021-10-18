@@ -173,6 +173,6 @@ To run the app.py file please follow the below directions:
 
 Example:
 
-<img src="https://user-images.githubusercontent.com/82348616/137656536-b6947456-94d8-4177-9968-c97f33e33da0.PNG" width="400" height="350">
+<img src="https://user-images.githubusercontent.com/82348616/137656536-b6947456-94d8-4177-9968-c97f33e33da0.PNG" width="400" height="150">
 
 
