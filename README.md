@@ -18,11 +18,7 @@ The app will have 3 main sections as per below:
 ---
 ## Method
 
-This project had 2 main parts.
-
-__Part 1: ETL process__
-
-__Part 2: App Creation__
+This project had 2 main parts: __Part 1: ETL process__ and __Part 2: App Creation__
 
 
 ### Part 1: ETL process
