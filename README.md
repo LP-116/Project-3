@@ -71,23 +71,15 @@ __App creation tools:__
 
 The below tools were used in creating the app:
 
-•	Python/Pandas - To complete the ETL process.
-
-•	Scikit-Learn - To complete the machine learning section.
-
-•	Tableau - To generate the comparative graph.
-
-•	MongoDB - To store the web scraping data.
-
-•	D3.js – To write the code that generated the visualisations.
-
-•	Chart.js – The library used to generate the graphs.
-
-•	Bootstrap – To design the html pages.
-
-•	Bootswatch – I used the Flatly theme.
-
-•	HTML / CSS / JS – To format and generate our webpage.
+* Python/Pandas - To complete the ETL process.
+*	Scikit-Learn - To complete the machine learning section.
+*	Tableau - To generate the comparative graph.
+*	MongoDB - To store the web scraping data.
+*	D3.js – To write the code that generated the visualisations.
+*	Chart.js – The library used to generate the graphs.
+*	Bootstrap – To design the html pages.
+* Bootswatch – I used the Flatly theme.
+*	HTML / CSS / JS – To format and generate our webpage.
 
 
 #### Functions of the app:
@@ -129,7 +121,6 @@ The Machine Learning page allows users to make a movie rating prediction by inpu
 There are also examples provided for the user that they can try and see the result.
 
 <img src="https://user-images.githubusercontent.com/82348616/137656742-ea8bd2da-cdc0-483f-95b8-249f0f5de2aa.PNG" width="700">
-
 <img src="https://user-images.githubusercontent.com/82348616/137656763-4a0ae6f9-5c13-4b4a-a7a0-5309270efcc7.PNG" width="700" height="150">
 
 And finally there is a __Database__ page that allows users to input/select a movie title and click a button to display details relating to the movie.
