@@ -1,8 +1,8 @@
 # Project-3
 ## IMDB Analysis
 
-#### To view a live version of the app please click [here](https://lpimdbapp.herokuapp.com/).
-*Note: The app can be slow to load due to it's size.  
+#### To view a live version of the app please click [here](https://lpimdbapp.herokuapp.com/). 
+*Note: The app is large and can be slow to load. 
 
 
 ---
