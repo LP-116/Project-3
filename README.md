@@ -1,7 +1,8 @@
 # Project-3
 ## IMDB Analysis
 
-#### To view a live version of the app please click [here](https://lpimdbapp.herokuapp.com/) .
+#### To view a live version of the app please click [here](https://lpimdbapp.herokuapp.com/).
+*Note: The app can be slow to load due to it's size.  
 
 
 ---
@@ -52,21 +53,25 @@ Once the smaller csv files were ready for app use I moved into the creation phas
 Firstly, a skeleton HTML file was created to outline where our visualisations would go and to give me a html file to work with.
 
 Next we moved on to creating the app routes.
-12 app routes were created that returned data in json format:
+15 app routes were created that returned data in json format:
 
-*	2 routes related to rendering the html pages
-*	2 routes related to web scraping
-*	1 route that was used to populate the drop down menu’s
-*	3 routes were used to generate map data
-*	3 routes were used to generate the graphs/stats section
-*	And lastly 1 route was used to generate the data required for a data tab.
+*	5 routes related to rendering the html pages
+*	1 routes related to web scraping
+*	3 route that was used to populate the drop down menu’s
+*	5 routes were used to generate the graphs/stats sections
+*	And lastly 1 route was used to generate the data required for a database tab.
 
-__Dashboard creation tools:__
+The app routes read in the smaller csv files and then use the pandas to_dict method to convert the data into a dictionary.
+The dictionary is then returned in a jsonified format.
 
+The machine learning html page also contained code to use a saved model and the pass user input data through the model to generate a prediction.
+More info on the machine learning process is found in the behind the scenes section.
 
-The below tools were used in creating our dashboard:
-•	D3.js – To write the code that generated the visualisations
-•	Chart.js – The library used to generate the bar and line chart
+__App creation tools:__
+
+The below tools were used in creating the app:
+•	D3.js – To write the code that generated the visualisations.
+•	Chart.js – The library used to generate the graphs.
 •	Bootstrap – To design our html page
 •	Bootswatch – We used the Flatly theme
 •	Mapbox – To generate the maps with leaflet.
