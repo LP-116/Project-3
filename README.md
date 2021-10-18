@@ -19,6 +19,7 @@ The app will have 3 main sections as per below:
 ## Method
 
 This project had 2 main parts.
+
 __Part 1: ETL process__
 
 __Part 2: App Creation__
@@ -172,6 +173,6 @@ To run the app.py file please follow the below directions:
 
 Example:
 
-<img src="https://user-images.githubusercontent.com/82348616/137656536-b6947456-94d8-4177-9968-c97f33e33da0.PNG" width="700">
+<img src="https://user-images.githubusercontent.com/82348616/137656536-b6947456-94d8-4177-9968-c97f33e33da0.PNG" width="400" height="350">
 
 
