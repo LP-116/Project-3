@@ -152,7 +152,7 @@ https://lpimdbapp.herokuapp.com/
 
 As mentioned above, please be aware that the app is large and can be quite slow to load.
 
-To view a live version of the app on your local machine, please clone this repository to your computer and follow the instructions on how to run the app.py file belo.
+To view a live version of the app on your local machine, please clone this repository to your computer and follow the instructions on how to run the app.py file below.
 
 Thank you.
 
