@@ -2,7 +2,8 @@
 ## IMDB Analysis
 
 #### To view a live version of the app please click [here](https://lpimdbapp.herokuapp.com/). 
-*Note: The app is large and can be slow to load. It takes approximately 30 seconds to initialise the app. 
+*Note: The app is large and can be slow to load. It takes approximately 30-40 seconds to initialise the app.
+
 
 
 
