@@ -79,7 +79,7 @@ The below tools were used in creating the app:
 *	Chart.js – The library used to generate the graphs.
 *	Bootstrap – To design the html pages.
 * Bootswatch – I used the Flatly theme.
-*	HTML / CSS / JS – To format and generate our webpage.
+*	HTML / CSS / JS – To format and generate the webpage.
 
 
 ### Functions of the app:
